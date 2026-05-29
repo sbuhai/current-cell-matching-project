@@ -1,0 +1,28 @@
+\begin{table}[t]
+\centering
+\caption{PVEU-margin robustness for a nearby target pair}
+\label{tab:policy-ranking-robustness}
+\footnotesize
+\renewcommand{\arraystretch}{1.08}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.20\textwidth}>{\raggedright\arraybackslash}p{0.16\textwidth}ccccccc}
+\toprule
+Comparison system & Support set & Union share & $A$ share & $B$ share & Mean $\hat\kappa^{\mathrm{mean}}$ & Worst-case $\hat\kappa^{\max}$ & $\Delta_{AB}=\log(\bar\eta(A)/\bar\eta(B))$ & Diagnostic interval \\
+\midrule
+\multicolumn{9}{l}{\textit{Panel A. Scale-free target comparison}} \\
+Age-only current matching & Full maintained support & 1.0000 & 1.0000 & 1.0000 & 0.27 & 4.61 & 0.01292 & [-0.04044,\ 0.15093] \\
+Age-only current matching & Common support only & 0.7472 & 0.3706 & 0.9338 & 0.27 & 4.61 & 0.00697 & [-0.00967,\ 0.07886] \\
+Verified current-cell map & Common support only & 0.7472 & 0.3706 & 0.9338 & 0.00 & 0.00 & -0.00481 & [-0.00799,\ -0.00296] \\
+\midrule
+\multicolumn{9}{l}{\textit{Panel B. Decomposition of the shift from age-based full support to verified current-cell common support}} \\
+Component & \multicolumn{8}{l}{Point contribution to $\Delta_{AB}$ (log points)} \\
+Support exclusion & \multicolumn{8}{l}{-0.00595} \\
+Within-support rematching & \multicolumn{8}{l}{-0.01178} \\
+Total change & \multicolumn{8}{l}{-0.01773} \\
+\bottomrule
+\end{tabular}%
+}
+\begin{minipage}{0.98\textwidth}
+\footnotesize Notes. Policy $A$ is the same cross-sectional transfer targeted to ages $25$ to $34$ in the central current earnings row (third row, earnings level $0.965$) on the maintained financing margin. Policy $B$ is the same cross-sectional transfer targeted to ages $45$ to $54$ on that maintained financing margin. Both are cross-sectional target-group reallocations evaluated on the same maintained one-period financing margin; the common financing rule defines the comparison margin and does not mean that the policies are literally self-transfers. The statistic $\Delta_{AB}$ is scale-free: positive values favor target $A$, negative values favor target $B$, and zero is the knife-edge. ``Common support'' is the intersection of the one-step support sets under verified current-cell and age-based current matching; the union, $A$, and $B$ support columns report how much of the target mass remains on the stated support set. The contamination columns are reported in percent log points, whereas $\Delta_{AB}$, its diagnostic interval, and the decomposition in Panel B are reported in log points. The diagnostic interval is the maintained identified set over all selectors from the five-nearest admissible older cells within the reported comparison system, conditional on that maintained admissible correspondence. Panel B uses the point log-ratios in Panel A to decompose the shift into support exclusion and within-support rematching; it is computed from the underlying unrounded point statistics, so displayed entries need not match arithmetic on separately rounded numbers beyond the last shown decimal. This nearby PVEU-margin target-pair exercise uses the same financing rule and represented local margin as the main-text comparison. In the current calibration it yields a convention-dependent ordering: age-based matching on full support slightly favors target $A$, whereas the verified current-cell map on common support slightly favors target $B$.
+\end{minipage}
+\end{table}

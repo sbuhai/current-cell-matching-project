@@ -1,0 +1,30 @@
+\begin{table}[H]
+\centering
+\caption{Grid refinement and tolerance-first matching diagnostics}
+\label{tab:grid-candidate-sensitivity}
+\footnotesize
+\renewcommand{\arraystretch}{1.05}
+\resizebox{0.99\textwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+\multicolumn{7}{l}{\textit{Panel A. Asset-grid refinement}} \\
+Asset points & Mean $|\Delta \log\upsilon|$ & 95th percentile $|\Delta \log\upsilon|$ & Mean wedge & 95th percentile wedge & $\widehat{\Spread}$ & $\widehat{\DemDist}$ \\
+\midrule
+250 & 0.0006 & 0.0033 & 1.0120 & 1.0842 & 3.036 & 5.500 \\
+800 & 0.0004 & 0.0017 & 1.0119 & 1.0839 & 3.027 & 5.231 \\
+1200 & 0.0003 & 0.0013 & 1.0118 & 1.0834 & 3.023 & 5.195 \\
+\midrule
+\multicolumn{7}{l}{\textit{Panel B. Tolerance-first current-cell graph}} \\
+Tolerance $\varepsilon$ & Exhaustive cap $K$ & Exhaustive? & Mean mismatch & 95th percentile mismatch & Candidate support share & Interval \\
+\midrule
+0.001 & 24 & yes & 0.00042 & 0.00094 & 0.5686 & $[-0.00374,\ -0.00350]$ \\
+0.002 & 34 & yes & 0.00088 & 0.00188 & 0.7438 & $[-0.00664,\ -0.00506]$ \\
+0.005 & 58 & yes & 0.00231 & 0.00471 & 0.8993 & $[-0.00819,\ -0.00298]$ \\
+0.010 & 82 & yes & 0.00475 & 0.00942 & 0.9268 & $[-0.01055,\ -0.00219]$ \\
+\bottomrule
+\end{tabular}%
+}
+\begin{minipage}{0.99\textwidth}
+\footnotesize Notes. Panel B makes the tolerance band the maintained object. Candidate support share is computed over the tolerance-candidate graph, not over the focal target domain. The search cap $K$ is the smallest cap that exhausts the retained tolerance set in the five-state hump calibration. Increasing the cap beyond the listed value adds no retained pair inside the stated tolerance. The maintained numerical row uses $\varepsilon=0.005$.
+\end{minipage}
+\end{table}

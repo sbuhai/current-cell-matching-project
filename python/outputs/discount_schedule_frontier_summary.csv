@@ -1,0 +1,6 @@
+rho,fixed_lower,fixed_upper,largest_lower,largest_upper,fixed_sign,free_anchor_status,free_anchor_sign
+0.00%,0.65797,0.66309,0.662,0.66254,positive,Unidentified,No
+2.00%,0.26804,0.27311,0.2757,0.27621,positive,Unidentified,No
+3.00%,0.07594,0.08098,0.0854,0.08588,positive,Unidentified,No
+3.44%,-0.00819,-0.00298,4e-05,0.00082,negative,Unidentified,No
+4.00%,-0.11429,-0.10928,-0.10307,-0.10261,negative,Unidentified,No

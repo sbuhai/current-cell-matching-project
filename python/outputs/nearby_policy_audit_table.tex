@@ -1,0 +1,25 @@
+\begin{table}[H]
+\centering
+\caption{Nearby $\PVEU$-margin target pair: support and rematching}
+\label{tab:nearby-policy-audit}
+\footnotesize
+\renewcommand{\arraystretch}{1.06}
+\resizebox{0.98\textwidth}{!}{%
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.27\textwidth}>{\raggedright\arraybackslash}p{0.16\textwidth}ccccc}
+\toprule
+Comparison system & Support set & Union share & $A$ share & $B$ share & $\Delta_{AB}$ & Interval \\
+\midrule
+Age-based current matching & Full maintained support & 1.0000 & 1.0000 & 1.0000 & 0.01292 & [-0.04044,\ 0.15093] \\
+Age-based current matching & Common support only & 0.7472 & 0.3706 & 0.9338 & 0.00697 & [-0.00967,\ 0.07886] \\
+Verified current-cell map & Common support & 0.7472 & 0.3706 & 0.9338 & -0.00481 & [-0.00799,\ -0.00296] \\
+\midrule
+Support exclusion & none & none & none & none & -0.00595 & none \\
+Within-support rematching & none & none & none & none & -0.01178 & none \\
+Total change & none & none & none & none & -0.01773 & none \\
+\bottomrule
+\end{tabular}%
+}
+\begin{minipage}{0.98\textwidth}
+\footnotesize Notes. Target $A$ is ages $25$ to $34$ in the central current earnings row; target $B$ is ages $45$ to $54$ on the same $\PVEU$ margin. Positive $\Delta_{AB}$ favors $A$. The last two comparison rows use the same common-support domain.
+\end{minipage}
+\end{table}

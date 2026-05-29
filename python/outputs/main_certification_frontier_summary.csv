@@ -1,0 +1,8 @@
+system,support,unit,anchors,wedge,certified,lower,upper,source_variable
+Age-only,full,implicit dollars,none,none,No,-0.04044,0.15093,"policy_ranking_robustness_summary: Age-only current matching, Full maintained support"
+Age-only,common,implicit dollars,none,none,No,-0.00967,0.07886,"policy_ranking_robustness_summary: Age-only current matching, Common support only"
+Verified current-cell,common,current-goods unit,fixed,KKT,"Yes, conditional",-0.00819,-0.00298,maintained_graph.fixed_anchor_interval
+Verified current-cell,common,current-goods unit,free,KKT,No,-inf,0.9148014329193268,maintained_graph.free_anchor_interval
+Largest common component,common component,current-goods unit,within-component,KKT,"Yes, positive within component",4e-05,0.00082,maintained_graph.largest_common_component_interval
+Unit-rescaled graph,rebuilt,age-state rescaled,fixed,KKT,No,-0.48701,0.50273,unit_sensitivity_protocol_summary: theta=1.00
+Richer-state system,rebuilt,current-goods unit,fixed,KKT,No,-0.03237,0.0677,liquid_illiquid_map_comparison_summary: tercile-plus-earnings interval

@@ -1,0 +1,5 @@
+===== RUNNING python run_normalization_robustness.py at 2026-05-29T19:51:56Z =====
+Alternative-normalization robustness exercise executed successfully.
+Outputs written to: python\outputs
+real 41.37
+===== EXIT python run_normalization_robustness.py status 0 at 2026-05-29T19:52:37Z =====

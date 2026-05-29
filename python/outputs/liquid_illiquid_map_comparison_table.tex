@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\caption{Stylized liquid/illiquid extension: current-map discipline beyond the one-asset benchmark}
+\label{tab:liquid-illiquid-map-comparison}
+\footnotesize
+\renewcommand{\arraystretch}{1.08}
+\resizebox{0.98\textwidth}{!}{%
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.29\textwidth}cccccc}
+\toprule
+Comparison system & Overlap & Target-union share & Mean $\hat\kappa^{\mathrm{mean}}$ & Worst-case $\hat\kappa^{\max}$ & Point $\Delta_{AB}$ & $K=2$ graph interval \\
+\midrule
+Exact current $k$ $\times$ earnings & 0.8151 & 0.9887 & 0.00 & 0.00 & -1.7959 & [-2.9602,\ 1.2558] \\
+Illiquid-tercile $\times$ earnings & 0.8946 & 0.9917 & 6.71 & 28.47 & -0.2706 & [-3.2369,\ 6.7702] \\
+Earnings only & 0.9349 & 0.9938 & 7.76 & 32.58 & 1.7445 & [-4.1160,\ 7.9730] \\
+Age only & 0.9531 & 1.0000 & 8.24 & 34.71 & 0.9560 & [-1.5240,\ 6.9176] \\
+\bottomrule
+\end{tabular}%
+}
+\begin{minipage}{0.98\textwidth}
+\footnotesize Notes. The stylized appendix block augments the one-asset life-cycle environment with an illiquid asset, a convex quadratic adjustment cost, and the same represented one-step liquid self-transfer margin used in the main text. The fine benchmark map is exact current illiquid index $\times$ current earnings state. The operational theorem-guided coarsening groups current illiquid holdings into terciles and keeps current earnings fixed. The two coarser benchmarks then drop current illiquid structure altogether (earnings-only) or drop all current non-age structure (age-based). PVEU target $A$ is the nearby main-text target on ages $25$ to $34$ in the central current earnings row (third row, earnings level $0.965$). PVEU target $B$ is ages $45$ to $54$ on the same represented margin. The overlap and target-union columns report retained younger mass on each map's own one-step support. The contamination columns, the point statistic, and the reported $K=2$ graph interval are all in percent log points. The point statistic uses the degenerate $K=1$ point summary, while the last column reports the graph-robust maintained interval for the same object under $K=2$. The block shows that when current illiquid structure matters for the represented margin, dropping it can materially change support and the direction of the maintained local PVEU-margin comparison.
+\end{minipage}
+\end{table}

@@ -1,0 +1,5 @@
+object,benchmark_value,critical_factor,critical_percent,interpretation
+Mean implemented wedge $\Lambda$ at $\rho^{S}=r$,1.011903,0.9882370148126847,1.1762985187315333,Downward edgewise correction needed to remove the average younger-tilt implication
+p95 implemented wedge $\Lambda$ at $\rho^{S}=r$,1.083907,0.9225883770471083,7.741162295289172,Downward edgewise correction needed to remove a high-wedge younger-tilt implication
+Nearby pair point summary $\Delta_{AB}$,-0.004806434838929238,1.0048180042753472,0.48180042753471763,Relative younger-favoring correction needed to flip the selected-support point summary
+Nearby pair graph lower endpoint,-0.007987661747986098,1.0080196482270916,0.8019648227091558,Relative younger-favoring correction needed to eliminate sign certification

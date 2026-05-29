@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\caption{Target comparisons after recomputing an alternative private-unit graph}
+\label{tab:alternative-normalization}
+\footnotesize
+\renewcommand{\arraystretch}{1.08}
+\resizebox{0.98\textwidth}{!}{%
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.25\textwidth}cccccc}
+\toprule
+Target pair & Baseline union & Alt. union & Baseline $E/C$ & Alt. $E/C$ & Baseline $\Delta_{AB}$ & Alt. $\Delta_{AB}$ \\
+\midrule
+Warm-up pair: ages 20-29 vs. 40-49 & 0.6411 & 0.9902 & 315005/77 & 321545/37 & 0.00876 [0.00090,\ 0.01444] & 0.00531 [-0.56178,\ 0.50144] \\
+Nearby pair: ages 25-34 vs. 45-54 & 0.7472 & 0.9895 & 315005/77 & 321545/37 & -0.00481 [-0.00799,\ -0.00296] & 0.04076 [-0.48701,\ 0.50273] \\
+\bottomrule
+\end{tabular}%
+}
+\begin{minipage}{0.98\textwidth}
+\footnotesize Notes. Baseline columns use the maintained current-goods private unit and the stated baseline support. Alternative columns rescale the private metric to $\widetilde\upsilon_{aik}=\upsilon_{aik}/\bar\upsilon_a(k)$, where $\bar\upsilon_a(k)$ is the positive-mass geometric mean within the age--earnings cell, and then recompute one-step support, $K=5$ nearest-candidate edges, graph envelopes, and component anchors. $E/C$ reports finite edge and connected-component counts for the maintained graph used by the target comparison.
+\end{minipage}
+\end{table}

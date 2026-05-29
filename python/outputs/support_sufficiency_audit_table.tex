@@ -1,0 +1,38 @@
+\begin{table}[t]
+\centering
+\caption{Partition-robust contamination audit in the five-state hump environment at $\rho^{S}=r$}
+\label{tab:support-sufficiency-audit}
+\footnotesize
+\renewcommand{\arraystretch}{1.08}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}p{0.36\textwidth}ccc}
+\toprule
+Comparison system & Operative partition audit & Overlap & Mean $\hat\kappa^{\mathrm{mean}}$ & Worst-case $\hat\kappa^{\max}$ \\
+\midrule
+Three-block coarsening & Baseline operative partition (Age x coarse weighted quantiles ($N_q$=20)) & 0.8260 & 0.35 & 4.36 \\
+ & Nested-bin robustness (Age x coarse weighted quantiles ($N_q$=10)) & 0.8260 & 0.31 & 3.94 \\
+ & Nested-bin robustness (Age x coarse weighted quantiles ($N_q$=40)) & 0.8260 & 0.47 & 4.36 \\
+ & Shifted-bin robustness (Shifted weighted quantiles ($N_q$=20)) & 0.8260 & 0.50 & 4.61 \\
+ & Fixed-cutoff robustness (Age-specific fixed cutoffs ($N_q$=20)) & 0.8260 & 0.47 & 4.61 \\
+ & Pooled-cutoff robustness (Pooled cutoffs ($N_q$=20)) & 0.8260 & 0.90 & 4.49 \\
+\midrule
+Standardized heuristic map & Baseline operative partition (Age x coarse weighted quantiles ($N_q$=20)) & 0.9298 & 0.25 & 4.61 \\
+ & Nested-bin robustness (Age x coarse weighted quantiles ($N_q$=10)) & 0.9298 & 0.66 & 4.34 \\
+ & Nested-bin robustness (Age x coarse weighted quantiles ($N_q$=40)) & 0.9298 & 0.29 & 4.61 \\
+ & Shifted-bin robustness (Shifted weighted quantiles ($N_q$=20)) & 0.9298 & 0.35 & 4.61 \\
+ & Fixed-cutoff robustness (Age-specific fixed cutoffs ($N_q$=20)) & 0.9298 & 0.30 & 4.61 \\
+ & Pooled-cutoff robustness (Pooled cutoffs ($N_q$=20)) & 0.9298 & 0.54 & 4.49 \\
+\midrule
+Age-only current matching & Baseline operative partition (Age x coarse weighted quantiles ($N_q$=20)) & 0.9673 & 0.27 & 4.61 \\
+ & Nested-bin robustness (Age x coarse weighted quantiles ($N_q$=10)) & 0.9673 & 0.57 & 3.50 \\
+ & Nested-bin robustness (Age x coarse weighted quantiles ($N_q$=40)) & 0.9673 & 0.25 & 4.61 \\
+ & Shifted-bin robustness (Shifted weighted quantiles ($N_q$=20)) & 0.9673 & 0.59 & 4.34 \\
+ & Fixed-cutoff robustness (Age-specific fixed cutoffs ($N_q$=20)) & 0.9673 & 0.27 & 4.61 \\
+ & Pooled-cutoff robustness (Pooled cutoffs ($N_q$=20)) & 0.9673 & 0.49 & 4.49 \\
+\bottomrule
+\end{tabular}%
+}
+\begin{minipage}{0.97\textwidth}
+\footnotesize Notes. The table audits the contamination diagnostics for each coarsened current comparison map under the baseline operative partition, nested-bin variants, shifted weighted-quantile bins, age-specific fixed cutoffs, and fully pooled cutoffs. Overlap is repeated because it is a property of the current comparison map rather than of the partition. The theorem-relevant object is the worst-case radius $\hat\kappa^{\max}$; the mean column is a descriptive mass-weighted average radius. Under the midpoint benchmark used in the theorem, $\hat\kappa^{\max}$ equals one half of the corresponding within-partition oscillation of the theorem-relevant benchmark term.
+\end{minipage}
+\end{table}

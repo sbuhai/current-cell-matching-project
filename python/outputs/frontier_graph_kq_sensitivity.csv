@@ -1,0 +1,19 @@
+panel,label,parameter,value_1,value_2
+kappa_plp,Verified current-cell map,10,0.0,0.0
+kappa_plp,Three-block coarsening,10,0.3134446196390848,3.94255238984235
+kappa_plp,Standardized heuristic map,10,0.6557765349696291,4.341950629113253
+kappa_plp,Age-only current matching,10,0.5663522810705415,3.50430441964823
+kappa_plp,Verified current-cell map,20,0.0,0.0
+kappa_plp,Three-block coarsening,20,0.35446505901691433,4.356062486251757
+kappa_plp,Standardized heuristic map,20,0.2511013044470518,4.6065918869134785
+kappa_plp,Age-only current matching,20,0.27050350926440825,4.6065918869134785
+kappa_plp,Verified current-cell map,40,0.0,0.0
+kappa_plp,Three-block coarsening,40,0.4717835528248433,4.356062486251757
+kappa_plp,Standardized heuristic map,40,0.2935942218080661,4.6065918869134785
+kappa_plp,Age-only current matching,40,0.24807722972208127,4.6065918869134785
+envelope,Verified current-cell map,1,0.0,0.0
+envelope,Verified current-cell map,5,0.1800572290523829,1.6449294649013115
+envelope,Verified current-cell map,10,1.301490949783265,12.346127896670815
+envelope,Age-only current matching,1,0.0,0.0
+envelope,Age-only current matching,5,1.2855808949278391,17.224163798288767
+envelope,Age-only current matching,10,2.420309396376681,31.62676426777245

@@ -1,0 +1,13 @@
+===== RUNNING python run_frontier_policy.py at 2026-05-29T19:56:37Z =====
+Frozen outputs validated for run_frontier_policy.py. Set FULL_REBUILD=1 to recompute the finite-grid solve.
+validated: support_sufficiency_frontier.csv
+validated: support_sufficiency_audit.csv
+validated: support_sufficiency_audit_table.tex
+validated: policy_ranking_robustness_summary.csv
+validated: policy_ranking_robustness_table.tex
+validated: policy_map_comparison_table.tex
+validated: frontier_graph_kq_sensitivity.csv
+validated: frontier_graph_kq_sensitivity_table.tex
+validated: generated_numbers_frontier.tex
+real 1.70
+===== EXIT python run_frontier_policy.py status 0 at 2026-05-29T19:56:39Z =====

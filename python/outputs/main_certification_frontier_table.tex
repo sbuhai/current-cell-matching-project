@@ -1,0 +1,25 @@
+\begin{table}[H]
+\centering
+\caption{Certification frontier for the focal target comparison}
+\label{tab:main-diagnostic-audit}
+\scriptsize
+\renewcommand{\arraystretch}{1.05}
+\resizebox{0.99\textwidth}{!}{%
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}p{0.13\textwidth}>{\raggedright\arraybackslash}p{0.14\textwidth}>{\raggedright\arraybackslash}p{0.10\textwidth}>{\raggedright\arraybackslash}p{0.09\textwidth}>{\raggedright\arraybackslash}p{0.13\textwidth}>{\raggedright\arraybackslash}p{0.17\textwidth}}
+\toprule
+Maintained system & Support & Unit & Anchors & Wedge & Certified sign? & Interval \\
+\midrule
+Age-only & full & implicit dollars & none & none & No & [-0.04044,\ 0.15093] \\
+Age-only & common & implicit dollars & none & none & No & [-0.00967,\ 0.07886] \\
+Verified current-cell & common & current-goods unit & fixed & KKT & Yes, conditional & [-0.00819,\ -0.00298] \\
+Verified current-cell & common & current-goods unit & free & KKT & No & [$-\infty$,\ 0.91480] \\
+Largest common component & common component & current-goods unit & within-component & KKT & Yes, positive within component & [0.00004,\ 0.00082] \\
+Unit-rescaled graph & rebuilt & age-state rescaled & fixed & KKT & No & [-0.48701,\ 0.50273] \\
+Richer-state system & rebuilt & current-goods unit & fixed & KKT & No & [-0.03237,\ 0.06770] \\
+\bottomrule
+\end{tabular}%
+}
+\begin{minipage}{0.99\textwidth}
+\footnotesize Notes. Positive $\Delta_{AB}$ favors target $A$. Certified means sign-certified under the row's maintained system. Within-component restricts both targets to their largest common connected component.
+\end{minipage}
+\end{table}

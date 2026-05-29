@@ -1,0 +1,27 @@
+\begin{table}[t]
+\centering
+\caption{Wedge-enforcement audit at $\rho^{S}=r$}
+\label{tab:wedge-audit}
+\footnotesize
+\renewcommand{\arraystretch}{1.08}
+\resizebox{0.99\textwidth}{!}{%
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.34\textwidth}cccccc}
+\toprule
+Wedge specification & Mean wedge & p95 wedge & Spread & Transport & Nearby $\Delta_{AB}$ & Nearby $K=5$ interval \\
+\midrule
+\multicolumn{7}{l}{\textit{Panel A. Baseline represented-margin diagnostics}} \\
+Implemented KKT-consistent wedge & 1.0119 & 1.0839 & 3.0265 & 5.2308 & -- & -- \\
+Raw interior / boundary-clipped & 1.0118 & 1.0839 & 3.0324 & 5.3546 & -- & -- \\
+Fully raw Euler proxy & 1.0118 & 1.0839 & 3.0324 & 5.3546 & -- & -- \\
+\midrule
+\multicolumn{7}{l}{\textit{Panel B. Nearby policy object on common support in the five-state hump environment}} \\
+Implemented KKT-consistent wedge & 1.0170 & 1.0965 & -- & -- & -0.0048 & [-0.0080, -0.0030] \\
+Raw interior / boundary-clipped & 1.0170 & 1.0965 & -- & -- & 0.0303 & [-0.9783, 0.9802] \\
+Fully raw Euler proxy & 1.0170 & 1.0965 & -- & -- & 0.0303 & [-0.9783, 0.9802] \\
+\bottomrule
+\end{tabular}%
+}
+\begin{minipage}{0.99\textwidth}
+\footnotesize Notes. Panel A compares the baseline one-asset represented margin under three wedge constructions: the paper's implemented KKT-consistent wedge, a stress test that propagates raw interior Euler deviations while clipping boundary cells at one, and the fully raw Euler proxy. Spread and transport are the maintained theorem objects from the baseline geometric diagnostics. Panel B propagates the same three wedge constructions through the nearby policy object on the common support used in the main text under the verified current-cell map and the maintained $K=5$ envelope. This is an audit, not a new theorem: the raw-Euler rows intentionally expose the extent to which numerical interior Euler noise can move maintained quantitative objects when it is propagated directly rather than normalized away by the KKT-consistent implementation.
+\end{minipage}
+\end{table}

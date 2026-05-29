@@ -1,0 +1,6 @@
+===== RUNNING FULL_REBUILD=1 python run_robustness.py at 2026-05-29T19:57:10Z =====
+Harder-environment robustness pipeline executed successfully.
+CSV written to: python\outputs\robustness_harder_env_summary.csv
+LaTeX table written to: python\outputs\robustness_harder_env_table.tex
+real 31.86
+===== EXIT FULL_REBUILD=1 python run_robustness.py status 0 at 2026-05-29T19:57:42Z =====

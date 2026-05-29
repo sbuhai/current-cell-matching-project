@@ -1,0 +1,6 @@
+===== RUNNING python run_omitted_support_bounds.py at 2026-05-29T19:51:48Z =====
+Omitted-support bounds executed successfully.
+CSV written to: python\outputs\omitted_support_bounds_summary.csv
+TeX table written to: python\outputs\omitted_support_bounds_table.tex
+real 8.08
+===== EXIT python run_omitted_support_bounds.py status 0 at 2026-05-29T19:51:56Z =====

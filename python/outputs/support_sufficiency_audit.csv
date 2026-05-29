@@ -1,0 +1,19 @@
+label,partition_label,bin_count,overall_support_overlap_share,weighted_mean_kappa_plp,max_kappa_plp
+Three-block coarsening,Baseline operative partition (Age x coarse weighted quantiles (N_q=20)),20,0.8259824559568217,0.35446505901691433,4.356062486251757
+Three-block coarsening,Nested-bin robustness (Age x coarse weighted quantiles (N_q=10)),10,0.8259824559568217,0.3134446196390848,3.94255238984235
+Three-block coarsening,Nested-bin robustness (Age x coarse weighted quantiles (N_q=40)),40,0.8259824559568217,0.4717835528248433,4.356062486251757
+Three-block coarsening,Shifted-bin robustness (Shifted weighted quantiles (N_q=20)),20,0.8259824559568217,0.5015634783787494,4.6065918869134785
+Three-block coarsening,Fixed-cutoff robustness (Age-specific fixed cutoffs (N_q=20)),20,0.8259824559568217,0.469550550334219,4.6065918869134785
+Three-block coarsening,Pooled-cutoff robustness (Pooled cutoffs (N_q=20)),20,0.8259824559568217,0.9045534388839196,4.490965270923725
+Standardized heuristic map,Baseline operative partition (Age x coarse weighted quantiles (N_q=20)),20,0.9298256224315964,0.2511013044470518,4.6065918869134785
+Standardized heuristic map,Nested-bin robustness (Age x coarse weighted quantiles (N_q=10)),10,0.9298256224315964,0.6557765349696291,4.341950629113253
+Standardized heuristic map,Nested-bin robustness (Age x coarse weighted quantiles (N_q=40)),40,0.9298256224315964,0.2935942218080661,4.6065918869134785
+Standardized heuristic map,Shifted-bin robustness (Shifted weighted quantiles (N_q=20)),20,0.9298256224315964,0.34581483597791707,4.6065918869134785
+Standardized heuristic map,Fixed-cutoff robustness (Age-specific fixed cutoffs (N_q=20)),20,0.9298256224315964,0.3033922236081095,4.6065918869134785
+Standardized heuristic map,Pooled-cutoff robustness (Pooled cutoffs (N_q=20)),20,0.9298256224315964,0.5398411796751011,4.490965270923725
+Age-only current matching,Baseline operative partition (Age x coarse weighted quantiles (N_q=20)),20,0.9672747750669214,0.27050350926440825,4.6065918869134785
+Age-only current matching,Nested-bin robustness (Age x coarse weighted quantiles (N_q=10)),10,0.9672747750669214,0.5663522810705415,3.50430441964823
+Age-only current matching,Nested-bin robustness (Age x coarse weighted quantiles (N_q=40)),40,0.9672747750669214,0.24807722972208127,4.6065918869134785
+Age-only current matching,Shifted-bin robustness (Shifted weighted quantiles (N_q=20)),20,0.9672747750669214,0.5857805813563075,4.341950629113253
+Age-only current matching,Fixed-cutoff robustness (Age-specific fixed cutoffs (N_q=20)),20,0.9672747750669214,0.27050350926440825,4.6065918869134785
+Age-only current matching,Pooled-cutoff robustness (Pooled cutoffs (N_q=20)),20,0.9672747750669214,0.48962207244945777,4.490965270923725

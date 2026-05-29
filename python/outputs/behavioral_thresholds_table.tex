@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\caption{Back-of-the-envelope behavioral thresholds for overturning the maintained benchmark}
+\label{tab:behavioral-thresholds}
+\footnotesize
+\renewcommand{\arraystretch}{1.08}
+\resizebox{0.98\textwidth}{!}{%
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.39\textwidth}ccc}
+\toprule
+Object & Benchmark value & Critical correction factor & Critical correction (percent) \\
+\midrule
+Mean implemented wedge $\Lambda$ at $\rho^{S}=r$ & 1.0119 & 0.9882 & 1.18\% \\
+p95 implemented wedge $\Lambda$ at $\rho^{S}=r$ & 1.0839 & 0.9226 & 7.74\% \\
+Nearby pair point summary $\Delta_{AB}$ & -0.00481 & 1.0048 & 0.48\% \\
+Nearby pair graph lower endpoint & -0.00799 & 1.0080 & 0.80\% \\
+\bottomrule
+\end{tabular}
+}
+\begin{minipage}{0.96\textwidth}
+\footnotesize Notes. The first two rows use the edgewise formula from Remark~\ref{rem:nonpaternalism-sensitivity}. At $\rho^{S}=r$, the younger-tilt inequality becomes $1<\Lambda\mathfrak{B}$, so the critical multiplicative correction is $\mathfrak{B}^{\mathrm{crit}}=1/\Lambda$. The last two rows use the selected-support nearby policy object from the main text: a relative correction in favor of policy $A$ must offset either the maintained point statistic or the lower endpoint of the verified current-cell graph interval. For orientation, shifting the upper endpoint of that interval to zero requires only about $0.30$\%; the reported interval threshold is the larger correction that drives the lower endpoint to zero and therefore reverses the interval sign entirely. The final column expresses the needed correction relative to the maintained nonpaternalistic benchmark of one.
+\end{minipage}
+\end{table}

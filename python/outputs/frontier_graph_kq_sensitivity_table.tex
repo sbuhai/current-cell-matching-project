@@ -1,0 +1,39 @@
+\begin{table}[t]
+\centering
+\caption{Sensitivity of contamination and graph-envelope diagnostics to $N_q$ and $K$}
+\label{tab:frontier-graph-kq-sensitivity}
+\footnotesize
+\renewcommand{\arraystretch}{1.08}
+\resizebox{0.97\textwidth}{!}{%
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.30\textwidth}cccc}
+\toprule
+Object & Tuning parameter & Mean diagnostic & Worst-case / max diagnostic & Notes \\
+\midrule
+\multicolumn{5}{l}{\textit{Panel A. Contamination diagnostics across weighted-$\log\contv$ bin counts $N_q$}} \\
+Verified current-cell map & $N_q=10$ & 0.00 & 0.00 & $\hat\kappa^{\mathrm{mean}},\ \hat\kappa^{\max}$ \\
+Three-block coarsening & $N_q=10$ & 0.31 & 3.94 & $\hat\kappa^{\mathrm{mean}},\ \hat\kappa^{\max}$ \\
+Standardized heuristic map & $N_q=10$ & 0.66 & 4.34 & $\hat\kappa^{\mathrm{mean}},\ \hat\kappa^{\max}$ \\
+Age-only current matching & $N_q=10$ & 0.57 & 3.50 & $\hat\kappa^{\mathrm{mean}},\ \hat\kappa^{\max}$ \\
+Verified current-cell map & $N_q=20$ & 0.00 & 0.00 & $\hat\kappa^{\mathrm{mean}},\ \hat\kappa^{\max}$ \\
+Three-block coarsening & $N_q=20$ & 0.35 & 4.36 & $\hat\kappa^{\mathrm{mean}},\ \hat\kappa^{\max}$ \\
+Standardized heuristic map & $N_q=20$ & 0.25 & 4.61 & $\hat\kappa^{\mathrm{mean}},\ \hat\kappa^{\max}$ \\
+Age-only current matching & $N_q=20$ & 0.27 & 4.61 & $\hat\kappa^{\mathrm{mean}},\ \hat\kappa^{\max}$ \\
+Verified current-cell map & $N_q=40$ & 0.00 & 0.00 & $\hat\kappa^{\mathrm{mean}},\ \hat\kappa^{\max}$ \\
+Three-block coarsening & $N_q=40$ & 0.47 & 4.36 & $\hat\kappa^{\mathrm{mean}},\ \hat\kappa^{\max}$ \\
+Standardized heuristic map & $N_q=40$ & 0.29 & 4.61 & $\hat\kappa^{\mathrm{mean}},\ \hat\kappa^{\max}$ \\
+Age-only current matching & $N_q=40$ & 0.25 & 4.61 & $\hat\kappa^{\mathrm{mean}},\ \hat\kappa^{\max}$ \\
+\midrule
+\multicolumn{5}{l}{\textit{Panel B. Graph-envelope width across selector counts $K$}} \\
+Verified current-cell map & $K=1$ & 0.0000 & 0.0000 & Mean and max age-profile band width \\
+Verified current-cell map & $K=5$ & 0.1801 & 1.6449 & Mean and max age-profile band width \\
+Verified current-cell map & $K=10$ & 1.3015 & 12.3461 & Mean and max age-profile band width \\
+Age-only current matching & $K=1$ & 0.0000 & 0.0000 & Mean and max age-profile band width \\
+Age-only current matching & $K=5$ & 1.2856 & 17.2242 & Mean and max age-profile band width \\
+Age-only current matching & $K=10$ & 2.4203 & 31.6268 & Mean and max age-profile band width \\
+\bottomrule
+\end{tabular}%
+}
+\begin{minipage}{0.97\textwidth}
+\footnotesize Notes. Panel A varies the number of weighted-$\log\contv$ bins used to aggregate omitted-state contamination within coarsened current classes in the five-state hump environment at $\rho^{S}=r$. The weighted-quantile cutoffs are recomputed separately for each $N_q$ on a discrete grid, so the $N_q=20$ rows are not nested refinements of the $N_q=10$ rows; nonmonotonic changes across $N_q$ therefore reflect changes in the operative partition rather than violations of the theorem. Panel A diagnostics are reported in percent log points. Panel B varies the number $K$ of admissible older candidates used in the graph-robust maintained envelope. Corollary~\ref{cor:graph-envelope-monotone} implies that envelope width is weakly increasing in $K$ whenever the candidate correspondences are nested, so the $K=1$ row is the degenerate point-selector benchmark and larger $K$ values widen the maintained identified set monotonically.
+\end{minipage}
+\end{table}

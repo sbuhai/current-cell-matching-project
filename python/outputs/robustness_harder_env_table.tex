@@ -1,0 +1,26 @@
+\begin{table}[!htbp]
+\centering
+\caption{Harder-environment robustness under natural and standardized comparison systems at $\rho^{S}=r$}
+\footnotesize
+\renewcommand{\arraystretch}{1.08}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.29\textwidth}ccccc}
+\toprule
+Specification & Overlap & Mean $|\Delta \log \upsilon|$ & p95 $|\Delta \log \upsilon|$ & $\widehat{\Spread}$ & $\widehat{\DemDist}$ \\
+\midrule
+\multicolumn{6}{l}{\textit{Panel A. Natural comparison system}} \\
+Baseline: flat efficiency, 2 earnings states & 1.0000 & 0.0004 & 0.0017 & 3.0265 & 5.2308 \\
+Hump efficiency, 2 earnings states & 0.8157 & 0.0061 & 0.0352 & 3.2680 & 9.3352 \\
+Hump efficiency, 5 earnings states & 0.7145 & 0.0092 & 0.0354 & 4.0426 & 3.2038 \\
+\midrule
+\multicolumn{6}{l}{\textit{Panel B. Standardized below-mean vs. at-or-above-mean earnings groups}} \\
+Baseline: flat efficiency, 2 earnings states & 1.0000 & 0.0004 & 0.0017 & 3.0265 & 5.2308 \\
+Hump efficiency, 2 earnings states & 0.8157 & 0.0061 & 0.0352 & 3.2680 & 9.3352 \\
+Hump efficiency, 5 earnings states & 0.9298 & 0.0024 & 0.0129 & 4.8074 & 15.7769 \\
+\bottomrule
+\end{tabular}%
+}
+\begin{minipage}{0.97\textwidth}
+\footnotesize Notes. Panel A lets the verified comparison map move with the earnings partition of each environment. Panel B keeps fixed a coarser below-mean versus at-or-above-mean earnings grouping only as a heuristic cross-specification device; it is used only as a heuristic cross-specification comparison system. The table reports direct matching diagnostics and the maintained geometric summaries at the market benchmark $\rho^{S}=r$.
+\end{minipage}
+\end{table}

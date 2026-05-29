@@ -1,0 +1,7 @@
+panel,wedge_specification,mean_wedge,p95_wedge,spread,conditional_transport,support_share,point_log_ratio,lower_log_ratio,upper_log_ratio
+Baseline represented margin at $\rho^{S}=r$,Implemented KKT-consistent wedge,1.0119030258485247,1.0839067896926924,3.026521792352143,5.230782950121662,1.0,nan,nan,nan
+Baseline represented margin at $\rho^{S}=r$,Raw interior / boundary-clipped,1.0118092273691348,1.0839067896926924,3.0324333104777965,5.354606934940365,1.0,nan,nan,nan
+Baseline represented margin at $\rho^{S}=r$,Fully raw Euler proxy,1.0118092273691348,1.0839067896926924,3.0324333104777965,5.354606934940365,1.0,nan,nan,nan
+"Nearby policy object on common support (natural map, $K=5$)",Implemented KKT-consistent wedge,1.0169594616451907,1.0964882555858941,nan,nan,0.7471985722050541,-0.0048064348389294615,-0.007987661747986546,-0.0029572028662497017
+"Nearby policy object on common support (natural map, $K=5$)",Raw interior / boundary-clipped,1.017001286625602,1.0964882555858941,nan,nan,0.7471985722050541,0.03032483897644034,-0.9783185051194437,0.9802213479714731
+"Nearby policy object on common support (natural map, $K=5$)",Fully raw Euler proxy,1.017001286625602,1.0964882555858941,nan,nan,0.7471985722050541,0.03032483897644034,-0.9783185051194437,0.9802213479714731

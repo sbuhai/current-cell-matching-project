@@ -1,0 +1,14 @@
+===== RUNNING python reproduce_main_tables.py at 2026-05-29T19:57:44Z =====
+Final main tables and source map written.
+Table 3 OK
+Table 4 OK
+Table 5 OK
+Table 6 OK
+Table 7 OK
+Table 3 OK
+Table 4 OK
+Table 5 OK
+Table 6 OK
+Table 7 OK
+real 0.38
+===== EXIT python reproduce_main_tables.py status 0 at 2026-05-29T19:57:44Z =====

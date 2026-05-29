@@ -1,0 +1,16 @@
+age_block,earnings_group,low_asset_share,mid_asset_share,high_asset_share,total_share_of_excluded
+20-29,Current earnings: low,1.0,0.0,0.0,0.233876068406406
+30-39,Current earnings: low,1.0,0.0,0.0,0.16429923452065834
+40-49,Current earnings: low,1.0,0.0,0.0,0.0933519645782298
+50-59,Current earnings: low,0.0,0.0,0.0,0.0
+60-64,Current earnings: low,1.0,0.0,0.0,0.00011431202193264201
+20-29,Current earnings: middle,1.0,0.0,0.0,0.23316255242413347
+30-39,Current earnings: middle,1.0,0.0,0.0,0.12545563800151419
+40-49,Current earnings: middle,1.0,0.0,0.0,0.00507756964643115
+50-59,Current earnings: middle,0.0,0.0,0.0,0.0
+60-64,Current earnings: middle,0.0,0.0,0.0,0.0
+20-29,Current earnings: high,1.0,0.0,0.0,0.12586019096603482
+30-39,Current earnings: high,1.0,0.0,0.0,0.018802469434659654
+40-49,Current earnings: high,0.0,0.0,0.0,0.0
+50-59,Current earnings: high,0.0,0.0,0.0,0.0
+60-64,Current earnings: high,0.0,0.0,0.0,0.0

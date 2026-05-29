@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\caption{Same policy object under alternative current matching systems}
+\label{tab:policy-map-comparison}
+\footnotesize
+\renewcommand{\arraystretch}{1.08}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.28\textwidth}cccccc}
+\toprule
+Comparison system & One-step overlap & Target-union share & Mean $\hat\kappa^{\mathrm{mean}}$ & Worst-case $\hat\kappa^{\max}$ & $\Delta_{AB}$ & Diagnostic interval \\
+\midrule
+Verified current-cell map & 0.7145 & 0.6411 & 0.00 & 0.00 & 0.00876 & [0.00090,\ 0.01444] \\
+Three-block coarsening & 0.8260 & 0.7135 & 0.35 & 4.36 & 0.00659 & [-0.01586,\ 0.01171] \\
+Standardized heuristic map & 0.9298 & 0.9714 & 0.25 & 4.61 & 0.11215 & [-0.02605,\ 1.19061] \\
+Age-only current matching & 0.9673 & 0.9714 & 0.27 & 4.61 & 0.11215 & [-0.02605,\ 1.19061] \\
+\bottomrule
+\end{tabular}%
+}
+\begin{minipage}{0.98\textwidth}
+\footnotesize Notes. Every row evaluates the same appendix warm-up local PVEU-margin comparison (policy $A$: ages $20$ to $29$ in the central current earnings row (third row, earnings level $0.965$); policy $B$: ages $40$ to $49$ on the same financing margin), but under the stated current matching system and on that system's own one-step support. The overlap column reports the younger-mass one-step support share for the map; the target-union share reports how much of the union of the two policy target groups remains on that map's support. The contamination columns are in percent log points, whereas $\Delta_{AB}$ and the diagnostic interval are in log points. In the current benchmark object, the standardized heuristic and age-based rows happen to coincide in the policy columns because they retain the same target-union support and induce the same maintained selector summaries there; the difference between them shows up only in the theorem-relevant support and contamination diagnostics. The table is therefore a direct bite check for the verified current-cell map discipline: benign coarsenings can recover support with only modest widening, while aggressively coarse maps can look attractive on support yet remain much looser in contamination and graph-robustness.
+\end{minipage}
+\end{table}

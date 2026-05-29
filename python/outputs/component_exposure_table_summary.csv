@@ -1,0 +1,4 @@
+statistic,target_a,target_b,source_variable
+Mass in components shared with the other target,1.0,0.2797,target_mass_shared_components_original_target_denominator
+Component Herfindahl index,0.9999,0.1742,component_hhi_original_target_denominator
+Mass in largest common component,0.3706,0.2612,largest_common_component_original_target_denominator

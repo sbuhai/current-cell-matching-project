@@ -1,0 +1,5 @@
+layer,domain,support_share,graph_footprint,point_log_ratio,lower_log_ratio,upper_log_ratio
+Verified current-cell map in baseline $\PVEU$ units,Common support,0.7471985722050541,315005/77,-0.0048064348389294615,-0.007987661747986546,-0.0029572028662497017
+Monotone lower-tail completion,Full target,1.0,none,,-0.029019360666691522,-0.024019392822511237
+Alternative rescaled unit,Recomputed support,0.9894638165230754,321545/37,0.04075754053664113,-0.48701161844581076,0.5027256573530244
+Direct raw Euler proxy wedge,Same common support,0.7471985722050541,315005/77,0.03032483897644034,-0.9783185051194437,0.9802213479714731

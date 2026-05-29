@@ -1,0 +1,15 @@
+object,value
+mean_abs_log_gap,0.0006536170448452433
+median_abs_log_gap,5.2518680516006055e-06
+p95_abs_log_gap,0.0020638855464182315
+p99_abs_log_gap,0.01069713285200343
+max_abs_log_gap,0.026626764801971153
+weighted_mean_abs_log_gap,0.00043970420849725843
+weighted_p95_abs_log_gap,0.0017492270631350726
+weighted_p99_abs_log_gap,0.008400840647894495
+weighted_max_abs_log_gap,0.026626764801971153
+overall_support_overlap_share,1.0
+min_age_support_overlap_share,0.9999999999999998
+comparison_attribute,earnings_state
+pairwise_matching_rule,nearest_log
+aggregation_fibers,earnings_state_x_20_log_contv_bins

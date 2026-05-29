@@ -1,0 +1,9 @@
+===== RUNNING python run_final_diagnostics.py at 2026-05-29T19:57:44Z =====
+Final main tables and source map written.
+Table 3 OK
+Table 4 OK
+Table 5 OK
+Table 6 OK
+Table 7 OK
+real 0.19
+===== EXIT python run_final_diagnostics.py status 0 at 2026-05-29T19:57:44Z =====

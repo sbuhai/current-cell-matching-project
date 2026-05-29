@@ -1,0 +1,22 @@
+\begin{table}[H]
+\centering
+\caption{Nearby $\PVEU$-margin target pair II: omitted support, units, and wedge layers}
+\label{tab:nearby-policy-layers}
+\footnotesize
+\renewcommand{\arraystretch}{1.08}
+\resizebox{0.98\textwidth}{!}{%
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.30\textwidth}>{\raggedright\arraybackslash}p{0.15\textwidth}cccc}
+\toprule
+Maintained layer / specification & Domain & Union share & $E/C$ & Point summary & Interval or bound \\
+\midrule
+Verified current-cell map in baseline $\PVEU$ units & Common support & 0.7472 & 315005/77 & -0.00481 & [-0.00799,\ -0.00296] \\
+Monotone lower-tail completion & Full target & 1.0000 & none & none & [-0.02902,\ -0.02402] \\
+Alternative rescaled unit & Recomputed support & 0.9895 & 321545/37 & 0.04076 & [-0.48701,\ 0.50273] \\
+Direct raw Euler proxy wedge & Same common support & 0.7472 & 315005/77 & 0.03032 & [-0.97832,\ 0.98022] \\
+\bottomrule
+\end{tabular}%
+}
+\begin{minipage}{0.98\textwidth}
+\footnotesize Notes. $E/C$ reports finite $K=5$ edge and connected-component counts for the graph used in the row. The common-support rows use five nearest older candidates in $\log\contv$ within each verified class. The full-target row orders current liquid assets within each age and earnings block and completes omitted mass below the first supported asset by a weakly decreasing point summary. The alternative-unit row rescales the private metric to $\widetilde\upsilon=\upsilon/\bar\upsilon_a(k)$ and recomputes support, edges, graph envelopes, and component anchors. The raw-Euler row replaces the KKT-consistent wedge by the directly propagated Euler proxy.
+\end{minipage}
+\end{table}

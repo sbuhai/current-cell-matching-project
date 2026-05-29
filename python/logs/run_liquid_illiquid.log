@@ -1,0 +1,6 @@
+===== RUNNING python run_liquid_illiquid.py at 2026-05-29T19:52:37Z =====
+Liquid/illiquid extension executed successfully.
+CSV written to: python\outputs\liquid_illiquid_map_comparison_summary.csv
+TeX table written to: python\outputs\liquid_illiquid_map_comparison_table.tex
+real 14.40
+===== EXIT python run_liquid_illiquid.py status 0 at 2026-05-29T19:52:52Z =====

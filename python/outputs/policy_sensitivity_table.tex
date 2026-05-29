@@ -1,0 +1,29 @@
+\begin{table}[t]
+\centering
+\caption{Calibration and target-window sensitivity on common support for the nearby diagnostic pair}
+\label{tab:policy-sensitivity}
+\footnotesize
+\renewcommand{\arraystretch}{1.08}
+\resizebox{0.98\textwidth}{!}{%
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.34\textwidth}cccc}
+\toprule
+Scenario / PVEU target pair & Common-support share & Natural $\Delta_{AB}$ & Natural graph interval & Age-based $\Delta_{AB}$ \\
+\midrule
+\multicolumn{5}{l}{\textit{Panel A. Nearby pair across calibration perturbations}} \\
+Baseline & 0.7472 & -0.00481 & [-0.00799,\ -0.00296] & 0.00697 \\
+More patient: $\beta=0.97$ & 0.8631 & -0.00137 & [-0.00180,\ -0.00110] & -0.00078 \\
+Less patient: $\beta=0.94$ & 0.6795 & 0.13629 & [0.11113,\ 0.14976] & 0.05296 \\
+Higher curvature: $\sigma=2$ & 0.7958 & -0.00444 & [-0.00607,\ -0.00348] & 0.00102 \\
+Lower rate: $r=0.02$ & 0.6977 & 0.07253 & [0.05591,\ 0.08221] & 0.03889 \\
+\midrule
+\multicolumn{5}{l}{\textit{Panel B. Baseline target-window variation}} \\
+Warm-up: ages 20-29 vs. 40-49 & 0.6411 & 0.00876 & [0.00090,\ 0.01444] & 0.05187 \\
+Nearby: ages 25-34 vs. 45-54 & 0.7472 & -0.00481 & [-0.00799,\ -0.00296] & 0.00697 \\
+Older shift: ages 30-39 vs. 50-59 & 0.8423 & -0.00626 & [-0.00929,\ -0.00516] & -0.00626 \\
+\bottomrule
+\end{tabular}%
+}
+\begin{minipage}{0.98\textwidth}
+\footnotesize Notes. Panel A perturbs the five-state hump environment around the focal nearby PVEU-margin target pair from the main text: target $A$ puts mass on ages $25$ to $34$ in the central current earnings row (third row, earnings level $0.965$) and target $B$ puts mass on ages $45$ to $54$, with the same represented financing margin. Panel B holds the calibration fixed and varies only the target windows. All rows use the same common-support restriction, defined as the intersection of verified current-cell and age-based one-step support. Positive $\Delta_{AB}$ favors target $A$; negative values favor target $B$. The verified current-cell graph interval is the maintained identified envelope over the five-nearest admissible older candidates under the verified current-cell map. In the oldest target window, the age-based point summary happens to coincide numerically with the verified current-cell point summary even though the support shares and graph objects remain different; this is a genuine coincidence from the live pipeline rather than a transcription error.
+\end{minipage}
+\end{table}

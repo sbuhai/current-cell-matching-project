@@ -1,0 +1,19 @@
+===== RUNNING python run_all.py at 2026-05-29T19:51:21Z =====
+python_executable: C:\tmp\sdrecheck_venv\Scripts\python.exe
+working_directory: python
+python -m compileall -q .: status 0
+python run_baseline.py: status 0
+python run_iteration2_extras.py: status 0
+python run_omitted_support_bounds.py: status 0
+python run_normalization_robustness.py: status 0
+python run_liquid_illiquid.py: status 0
+FULL_REBUILD=1 python run_frontier_policy.py: status 0
+python run_frontier_policy.py: status 0
+FULL_REBUILD=1 python run_wedge_audit.py: status 0
+python run_wedge_audit.py: status 0
+FULL_REBUILD=1 python run_robustness.py: status 0
+python run_robustness.py: status 0
+python run_nearby_policy_audit.py: status 0
+python run_final_diagnostics.py: status 0
+python reproduce_main_tables.py: status 0
+===== EXIT python run_all.py status 0 at 2026-05-29T19:57:44Z =====

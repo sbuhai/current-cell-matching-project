@@ -1,0 +1,25 @@
+\begin{table}[H]
+\centering
+\caption{Unit path, omitted support, and wedge diagnostics}
+\label{tab:unit-wedge-protocol}
+\footnotesize
+\renewcommand{\arraystretch}{1.04}
+\resizebox{0.99\textwidth}{!}{%
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.28\textwidth}c>{\raggedright\arraybackslash}p{0.16\textwidth}ccccc}
+\toprule
+Specification & $\theta$ & Graph rule & Target support share & Components & Point & Interval or bound & Certification \\
+\midrule
+Current-goods unit & 0.00 & tolerance graph & 0.7472 & 3737 & -0.00481 & [-0.00819,\ -0.00298] & negative \\
+Unit path, $\theta=0.25$ & 0.25 & rebuilt tolerance graph & 0.7573 & 62 & -0.00457 & [-0.01611,\ -0.00281] & negative \\
+Unit path, $\theta=0.50$ & 0.50 & rebuilt tolerance graph & 0.7888 & 62 & -0.02694 & [-0.08342,\ -0.02136] & negative \\
+Unit path, $\theta=0.75$ & 0.75 & rebuilt tolerance graph & 0.8166 & 47 & -0.03167 & [-0.28857,\ 0.30268] & no \\
+Age-state rescaled unit & 1.00 & rebuilt tolerance graph & 0.9895 & 37 & 0.04076 & [-0.48701,\ 0.50273] & no \\
+Direct raw Euler proxy wedge & none & diagnostic five-nearest graph & 0.7472 & 77 & 0.03032 & [-0.97832,\ 0.98022] & no \\
+Illustrative lower-tail completion & none & completion bound & 1.0000 & not applicable & not applicable & [-0.02902,\ -0.02402] & maintained completion \\
+\bottomrule
+\end{tabular}%
+}
+\begin{minipage}{0.99\textwidth}
+\footnotesize Notes. Target support share is over focal target mass; candidate share in \Cref{tab:grid-candidate-sensitivity} is over tolerance candidates. Unit-path rows rebuild the graph. The raw Euler proxy uses a diagnostic five-nearest graph and unprojected finite-grid Euler residuals. It is a numerical stress test, not a competing welfare object.
+\end{minipage}
+\end{table}

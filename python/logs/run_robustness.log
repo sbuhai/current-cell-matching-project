@@ -1,0 +1,9 @@
+===== RUNNING python run_robustness.py at 2026-05-29T19:57:42Z =====
+Frozen outputs validated for run_robustness.py. Set FULL_REBUILD=1 to recompute the finite-grid solve.
+validated: robustness_harder_env_summary.csv
+validated: robustness_harder_env_table.tex
+validated: generated_numbers_robustness.tex
+validated: five_state_hump_excluded_mass_summary.csv
+validated: five_state_hump_excluded_mass_heatmap.png
+real 1.34
+===== EXIT python run_robustness.py status 0 at 2026-05-29T19:57:44Z =====

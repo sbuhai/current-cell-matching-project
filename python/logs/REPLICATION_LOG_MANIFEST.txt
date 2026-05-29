@@ -1,0 +1,49 @@
+Replication log manifest for Support, Units, and Current-Cell Matching in Social Discounting
+Updated by the full Python replication runner, 2026-05-29T19:57:44Z.
+
+Execution environment:
+  - python_executable: C:\tmp\sdrecheck_venv\Scripts\python.exe
+  - python_version.txt, platform.txt, and pip_freeze.txt were regenerated from this environment.
+  - Platform reported by Python: Windows-11-10.0.26200-SP0, AMD64.
+
+Generated directories and files:
+  - outputs/: generated tables, figures, CSV summaries, TeX number files, and source maps.
+  - logs/: plain-text command logs for each replication step.
+  - MAIN_TABLE_SOURCE_MAP.csv: duplicate of outputs/MAIN_TABLE_SOURCE_MAP.csv at the replication package root.
+
+Run logs and run records:
+  - python_compileall.log: successful syntax/bytecode compile check for all Python modules.
+  - run_baseline.log: successful fresh baseline regeneration.
+  - run_iteration2_extras.log: successful regeneration of add-on tables.
+  - run_omitted_support_bounds.log: successful omitted-support bounds regeneration.
+  - run_normalization_robustness.log: successful alternative-unit robustness regeneration.
+  - run_liquid_illiquid.log: successful liquid/illiquid stress-test regeneration.
+  - run_frontier_policy_full_rebuild.log: successful full rebuild of the frontier-policy outputs.
+  - run_frontier_policy.log: successful validation of the rebuilt frontier-policy outputs.
+  - run_wedge_audit_full_rebuild.log: successful full rebuild of the wedge-audit outputs.
+  - run_wedge_audit.log: successful validation of the rebuilt wedge-audit outputs.
+  - run_robustness_full_rebuild.log: successful full rebuild of the robustness outputs.
+  - run_robustness.log: successful validation of the rebuilt robustness outputs.
+  - run_nearby_policy_audit.log: successful support/rematching table regeneration.
+  - run_final_diagnostics.log: successful regeneration of manuscript Tables 3-7 and MAIN_TABLE_SOURCE_MAP.csv.
+  - reproduce_main_tables.log: successful synchronization check for Tables 3-7.
+
+Full replication command:
+  python run_all.py
+
+Command sequence:
+  python -m compileall -q .
+  python run_baseline.py
+  python run_iteration2_extras.py
+  python run_omitted_support_bounds.py
+  python run_normalization_robustness.py
+  python run_liquid_illiquid.py
+  FULL_REBUILD=1 python run_frontier_policy.py
+  python run_frontier_policy.py
+  FULL_REBUILD=1 python run_wedge_audit.py
+  python run_wedge_audit.py
+  FULL_REBUILD=1 python run_robustness.py
+  python run_robustness.py
+  python run_nearby_policy_audit.py
+  python run_final_diagnostics.py
+  python reproduce_main_tables.py

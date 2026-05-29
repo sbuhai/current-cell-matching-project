@@ -1,0 +1,15 @@
+parameter,value,source_or_rationale
+entry_age,20,Conesa and Krueger (1999)
+retirement_age,65,Conesa and Krueger (1999)
+terminal_age,85,Conesa and Krueger (1999)
+population_growth,0.011,Conesa and Krueger (1999)
+beta,0.9569,"Gourinchas and Parker (2002), optimal-weighting estimates"
+sigma,1.3969,"Gourinchas and Parker (2002), optimal-weighting estimates"
+interest_rate,0.0344,"Gourinchas and Parker (2002), optimal-weighting estimates"
+replacement_ratio,0.5,Conesa and Krueger (1999)
+asset_size,800,Curved asset grid used in the finite-grid solution
+income_states,"(0.73, 1.27)","Conesa and Krueger (1999), symmetric two-state benchmark earnings process"
+income_transition,"((0.82, 0.18), (0.18, 0.82))","Conesa and Krueger (1999), symmetric two-state benchmark earnings process"
+borrowing_limit,0.0,Aiyagari (1994); baseline no-unsecured-debt benchmark
+age_efficiency_mode,flat,Baseline normalization with flat deterministic efficiency profile
+envelope_bin_count,20,Finite-grid aggregation of comparison fibers by weighted quantiles of log contv
