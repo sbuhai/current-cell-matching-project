@@ -28,4 +28,4 @@ No restricted-access microdata are used. The public input files are in `python/d
 
 ## License
 
-No repository license has been selected yet. Add a license before making the repository public if you want to specify reuse terms for the code and replication materials.
+The Python code and replication materials are released under the MIT License. The paper PDF in `paper/` is provided for scholarly reference; copyright remains with the author unless otherwise stated.
