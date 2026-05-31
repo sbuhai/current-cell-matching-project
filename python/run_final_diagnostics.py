@@ -33,7 +33,7 @@ MAINTAINED_GRAPH = {
     "fixed_lower": -0.00819,
     "fixed_upper": -0.00298,
     "free_lower": float("-inf"),
-    "free_upper": 0.9148014329193268,
+    "free_upper": float("inf"),
     "same_component_lower": 0.00004,
     "same_component_upper": 0.00082,
     "same_component_point": 0.00043,
@@ -43,6 +43,30 @@ MAINTAINED_GRAPH = {
     "p95_normalized_cycle_residual": 0.0,
     "max_band_violation": 0.0,
     "min_relaxation": 0.0,
+}
+
+CROSS_COMPONENT_OUTER = {
+    "private_slope_log_range": 2.16058,
+    "outer_lower": -2.16877,
+    "outer_upper": 2.15760,
+}
+
+BOUNDARY_KINK_AUDIT = {
+    "baseline_support_share": 0.7471985722050543,
+    "trimmed_support_share": 0.7176782311858121,
+    "removed_common_support_mass_share": 0.03951,
+    "trim_rule": "drop lower-bound common-support target cells",
+    "point_log_ratio": -0.00008,
+    "lower_log_ratio": -0.00159,
+    "upper_log_ratio": 0.00090,
+}
+
+FREE_ANCHOR_DIAGNOSTIC = {
+    "target_a_shared_retained_share": 0.9999591753246523,
+    "target_b_shared_retained_share": 0.2796925531145469,
+    "target_a_unshared_original_mass": 1.2255373276271558e-06,
+    "largest_shared_exposure_log_shift": 1.2740234781657396,
+    "largest_shared_component_upper_floor": 1.2748434781657396,
 }
 
 BRIDGE_CORRECTION_RADIUS = 0.001
@@ -73,9 +97,9 @@ MAIN_CERTIFICATION_ROWS = [
         "source_variable": "policy_ranking_robustness_summary: Age-only current matching, Common support only",
     },
     {
-        "system": "Verified current-cell",
+        "system": "Verified cell",
         "support": "common",
-        "unit": "current-goods unit",
+        "unit": "current goods",
         "anchors": "fixed",
         "wedge": "KKT",
         "certified": "Yes, conditional",
@@ -84,9 +108,9 @@ MAIN_CERTIFICATION_ROWS = [
         "source_variable": "maintained_graph.fixed_anchor_interval",
     },
     {
-        "system": "Verified current-cell",
+        "system": "Verified cell",
         "support": "common",
-        "unit": "current-goods unit",
+        "unit": "current goods",
         "anchors": "free",
         "wedge": "KKT",
         "certified": "No",
@@ -95,12 +119,23 @@ MAIN_CERTIFICATION_ROWS = [
         "source_variable": "maintained_graph.free_anchor_interval",
     },
     {
-        "system": "Largest common component",
-        "support": "common component",
-        "unit": "current-goods unit",
-        "anchors": "within-component",
+        "system": "Verified cell",
+        "support": "common",
+        "unit": "current goods",
+        "anchors": "outer",
         "wedge": "KKT",
-        "certified": "Yes, positive within component",
+        "certified": "No",
+        "lower": CROSS_COMPONENT_OUTER["outer_lower"],
+        "upper": CROSS_COMPONENT_OUTER["outer_upper"],
+        "source_variable": "current_goods_outer_private_slope_envelope",
+    },
+    {
+        "system": "Largest common component",
+        "support": "common comp.",
+        "unit": "current goods",
+        "anchors": "within comp.",
+        "wedge": "KKT",
+        "certified": "Yes, within comp.",
         "lower": MAINTAINED_GRAPH["same_component_lower"],
         "upper": MAINTAINED_GRAPH["same_component_upper"],
         "source_variable": "maintained_graph.largest_common_component_interval",
@@ -108,7 +143,7 @@ MAIN_CERTIFICATION_ROWS = [
     {
         "system": "Unit-rescaled graph",
         "support": "rebuilt",
-        "unit": "age-state rescaled",
+        "unit": "age-state",
         "anchors": "fixed",
         "wedge": "KKT",
         "certified": "No",
@@ -119,7 +154,7 @@ MAIN_CERTIFICATION_ROWS = [
     {
         "system": "Richer-state system",
         "support": "rebuilt",
-        "unit": "current-goods unit",
+        "unit": "current goods",
         "anchors": "fixed",
         "wedge": "KKT",
         "certified": "No",
@@ -138,7 +173,7 @@ DISCOUNT_FRONTIER_ROWS = [
 ]
 
 COMPONENT_EXPOSURE_ROWS = [
-    {"statistic": "Mass in components shared with the other target", "target_a": 1.0000, "target_b": 0.2797, "source_variable": "target_mass_shared_components_original_target_denominator"},
+    {"statistic": "Mass in components shared with the other target", "target_a": FREE_ANCHOR_DIAGNOSTIC["target_a_shared_retained_share"], "target_b": FREE_ANCHOR_DIAGNOSTIC["target_b_shared_retained_share"], "source_variable": "target_mass_shared_components_retained_denominator"},
     {"statistic": "Component Herfindahl index", "target_a": 0.9999, "target_b": 0.1742, "source_variable": "component_hhi_original_target_denominator"},
     {"statistic": "Mass in largest common component", "target_a": 0.3706, "target_b": 0.2612, "source_variable": "largest_common_component_original_target_denominator"},
 ]
@@ -225,7 +260,7 @@ def _write_main_certification_table() -> None:
             r"\end{tabular}%",
             r"}",
             r"\begin{minipage}{0.99\textwidth}",
-            r"\footnotesize Notes. Positive $\Delta_{AB}$ favors target $A$. Certified means sign-certified under the row's maintained system. Within-component restricts both targets to their largest common connected component.",
+            r"\footnotesize Notes. Intervals are supported normalized residual-multiplier contrasts; positive $\Delta_{AB}$ favors target $A$. Certified means sign-certified under the maintained row. Free anchors are unbounded. The outer-envelope row restricts component gaps by the global private marginal-utility log range on maintained support.",
             r"\end{minipage}",
             r"\end{table}",
             "",
@@ -267,7 +302,7 @@ def _write_discount_frontier_table() -> None:
             r"\end{tabular}%",
             r"}",
             r"\begin{minipage}{0.99\textwidth}",
-            r"\footnotesize Notes. The table varies the imposed local social discount schedule holding the calibration, target pair, represented margin, and current-goods unit fixed. The market benchmark is $\rho^S=r=3.44\%$. Free anchors make every reported sign unidentified.",
+            r"\footnotesize Notes. The table varies the imposed local social discount schedule holding the calibration, target pair, represented margin, and current-goods unit fixed. The market benchmark is $\rho^S=r=3.44\%$. With unrestricted component anchors every reported sign is unidentified.",
             r"\end{minipage}",
             r"\end{table}",
             "",
@@ -293,6 +328,9 @@ def _write_component_tables() -> None:
         "fixed_anchor_upper": MAINTAINED_GRAPH["fixed_upper"],
         "free_anchor_lower": MAINTAINED_GRAPH["free_lower"],
         "free_anchor_upper": MAINTAINED_GRAPH["free_upper"],
+        "outer_private_slope_log_range": CROSS_COMPONENT_OUTER["private_slope_log_range"],
+        "outer_anchor_lower": CROSS_COMPONENT_OUTER["outer_lower"],
+        "outer_anchor_upper": CROSS_COMPONENT_OUTER["outer_upper"],
         "same_component_lower": MAINTAINED_GRAPH["same_component_lower"],
         "same_component_upper": MAINTAINED_GRAPH["same_component_upper"],
         "same_component_point": MAINTAINED_GRAPH["same_component_point"],
@@ -326,7 +364,7 @@ def _write_component_tables() -> None:
             r"\bottomrule",
             r"\end{tabular}",
             r"\begin{minipage}{0.88\textwidth}",
-            r"\footnotesize Notes. The first row is normalized by each target's graph-supported mass; the Herfindahl index uses each target's retained component shares. The largest-common-component row is normalized by original target mass. Shared components receive positive mass from both targets.",
+            r"\footnotesize Notes. The first row is normalized by each target's graph-supported mass; the Herfindahl index uses retained component shares. The largest-common-component row is normalized by original target mass. The unrounded target-$A$ shared share is $0.99996$, so a small $A$-only mass remains.",
             r"\end{minipage}",
             r"\end{table}",
             "",
@@ -352,7 +390,7 @@ def _write_component_tables() -> None:
         r"\end{tabular}%",
         r"}",
         r"\begin{minipage}{0.99\textwidth}",
-        r"\footnotesize Notes. This audit table records the maintained exhaustive tolerance graph used by the manuscript. The raw Euler proxy elsewhere is explicitly labeled as a diagnostic five-nearest graph.",
+        r"\footnotesize Notes. This audit table records the maintained exhaustive tolerance graph used by the manuscript. The free-anchor interval is two-sided unbounded; the largest shared component alone implies a feasible upper value above $1.274$.",
         r"\end{minipage}",
         r"\end{table}",
         "",
@@ -460,6 +498,10 @@ def _write_grid_candidate_table() -> None:
     (OUTPUT_DIR / "grid_candidate_sensitivity_table.tex").write_text("\n".join(lines), encoding="utf-8")
 
 
+def _write_boundary_kink_audit() -> None:
+    _write_records(OUTPUT_DIR / "boundary_kink_trim_summary.csv", [BOUNDARY_KINK_AUDIT])
+
+
 def _write_nearby_table() -> None:
     policy_path = OUTPUT_DIR / "nearby_policy_audit_summary.csv"
     if not policy_path.exists():
@@ -541,6 +583,9 @@ def _write_source_map() -> None:
     add("Text: maintained graph components", str(MAINTAINED_GRAPH["components"]), "python/outputs/component_graph_exposure_summary.csv", "component_count")
     add("Text: maintained graph independent cycles", str(MAINTAINED_GRAPH["cycles"]), "python/outputs/component_graph_exposure_summary.csv", "independent_cycles")
     add("Text: component-anchor sign-loss threshold", f"{COMPONENT_ANCHOR_SIGN_THRESHOLD:.5f}", "python/outputs/component_graph_exposure_summary.csv", "component_anchor_sign_threshold", "Bounded component-anchor radius at which fixed-anchor sign certification is lost.")
+    add("Text/Table 3: outer private marginal-utility log range", f"{CROSS_COMPONENT_OUTER['private_slope_log_range']:.5f}", "python/outputs/component_graph_exposure_summary.csv", "outer_private_slope_log_range", "Global maintained-support range used for the current-goods outer component envelope.")
+    add("Text: borrowing-kink trim support share", f"{BOUNDARY_KINK_AUDIT['trimmed_support_share']:.4f}", "python/outputs/boundary_kink_trim_summary.csv", "trimmed_support_share", "Severe support audit that drops lower-bound common-support target cells.")
+    add("Text: borrowing-kink trim interval", _fmt_interval(BOUNDARY_KINK_AUDIT["lower_log_ratio"], BOUNDARY_KINK_AUDIT["upper_log_ratio"]), "python/outputs/boundary_kink_trim_summary.csv", "lower_log_ratio, upper_log_ratio", "This is a different supported estimand, not the maintained fixed-anchor row.")
     add("Text/Table 6: bridge sign threshold", f"{BRIDGE_SIGN_THRESHOLD:.5f}", "python/outputs/unit_sensitivity_protocol_summary.csv", "bounded_bridge_threshold", "Target-average bridge corridor before fixed-anchor sign loss.")
     add("Text: margin-sufficiency Q dispersion", "0.00000", "python/outputs/margin_sufficiency_audit_summary.csv", "max_abs_delta_log_q", source_script="python/run_margin_sufficiency_audit.py")
     add("Text: margin-sufficiency row mismatch", "0.0000", "python/outputs/margin_sufficiency_audit_summary.csv", "transition_row_mismatch_share", source_script="python/run_margin_sufficiency_audit.py")
@@ -553,7 +598,7 @@ def _write_source_map() -> None:
 
     notes = f"""# Source notes for the main manuscript tables
 
-The main tables in Section 8 are regenerated by `python/run_final_diagnostics.py`. The current-map dispersion numbers are generated by `python/run_margin_sufficiency_audit.py` and included in the source map.
+The main quantitative tables are regenerated by `python/run_final_diagnostics.py`. The current-map dispersion numbers are generated by `python/run_margin_sufficiency_audit.py` and included in the source map. The Refine9 outer-envelope and boundary-trim audit rows are recorded in the same source map.
 
 Maintained graph object: exhaustive current-cell tolerance graph with epsilon 0.005. It has {MAINTAINED_GRAPH['vertices']:,} vertices, {MAINTAINED_GRAPH['edges']:,} edges, {MAINTAINED_GRAPH['components']:,} components, and {MAINTAINED_GRAPH['cycles']:,} independent cycles. Diagnostic five-nearest objects are used only in rows explicitly labeled as diagnostic.
 
@@ -571,6 +616,7 @@ def main() -> None:
     _write_component_tables()
     _write_unit_protocol_table()
     _write_grid_candidate_table()
+    _write_boundary_kink_audit()
     _write_nearby_table()
     _write_source_map()
     print("Final main tables and source map written.")

@@ -1,0 +1,2 @@
+baseline_support_share,trimmed_support_share,removed_common_support_mass_share,trim_rule,point_log_ratio,lower_log_ratio,upper_log_ratio
+0.7471985722050543,0.7176782311858121,0.03951,drop lower-bound common-support target cells,-8e-05,-0.00159,0.0009

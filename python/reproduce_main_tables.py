@@ -38,9 +38,11 @@ def main() -> int:
         raise SystemExit("Table 6 baseline component count mismatch")
     if float(first["lower_log_ratio"]) != -0.00819 or float(first["upper_log_ratio"]) != -0.00298:
         raise SystemExit("Table 6 baseline interval mismatch")
+    if not math.isinf(float(graph["free_anchor_upper"])) or float(graph["free_anchor_upper"]) < 0:
+        raise SystemExit("Table 3 free-anchor upper bound should be +infinity")
     table3 = (ROOT / "outputs" / "main_certification_frontier_table.tex").read_text(encoding="utf-8")
-    if "0.91480" not in table3:
-        raise SystemExit("Table 3 free-anchor upper bound missing")
+    if r"$+\infty$" not in table3:
+        raise SystemExit("Table 3 free-anchor +infinity bound missing")
     margin = read_one(ROOT / "outputs" / "margin_sufficiency_audit_summary.csv")
     if margin.get("transition_row_mismatch_share") != "0.0":
         raise SystemExit("margin-sufficiency transition-row audit mismatch")

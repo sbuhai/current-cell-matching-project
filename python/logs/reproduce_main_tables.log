@@ -1,4 +1,4 @@
-===== RUNNING python reproduce_main_tables.py at 2026-05-31T00:37:00Z =====
+===== RUNNING python reproduce_main_tables.py at 2026-05-31T23:43:24Z =====
 Margin-sufficiency audit written successfully.
 Final main tables and source map written.
 Table 3 OK
@@ -11,5 +11,5 @@ Table 4 OK
 Table 5 OK
 Table 6 OK
 Table 7 OK
-real 11.24
-===== EXIT python reproduce_main_tables.py status 0 at 2026-05-31T00:37:11Z =====
+real 11.50
+===== EXIT python reproduce_main_tables.py status 0 at 2026-05-31T23:43:35Z =====
