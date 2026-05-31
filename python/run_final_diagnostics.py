@@ -47,6 +47,7 @@ MAINTAINED_GRAPH = {
 
 BRIDGE_CORRECTION_RADIUS = 0.001
 BRIDGE_SIGN_THRESHOLD = abs(float(MAINTAINED_GRAPH["fixed_upper"]))
+COMPONENT_ANCHOR_SIGN_THRESHOLD = 0.00333
 
 MAIN_CERTIFICATION_ROWS = [
     {
@@ -296,6 +297,7 @@ def _write_component_tables() -> None:
         "same_component_upper": MAINTAINED_GRAPH["same_component_upper"],
         "same_component_point": MAINTAINED_GRAPH["same_component_point"],
         "target_cycle_mass": MAINTAINED_GRAPH["target_cycle_mass"],
+        "component_anchor_sign_threshold": COMPONENT_ANCHOR_SIGN_THRESHOLD,
         "p95_edge_band": MAINTAINED_GRAPH["p95_edge_band"],
         "p95_cycle_residual": MAINTAINED_GRAPH["p95_cycle_residual"],
         "p95_normalized_cycle_residual": MAINTAINED_GRAPH["p95_normalized_cycle_residual"],
@@ -538,6 +540,7 @@ def _write_source_map() -> None:
     add("Text: maintained graph edges", str(MAINTAINED_GRAPH["edges"]), "python/outputs/component_graph_exposure_summary.csv", "edge_count")
     add("Text: maintained graph components", str(MAINTAINED_GRAPH["components"]), "python/outputs/component_graph_exposure_summary.csv", "component_count")
     add("Text: maintained graph independent cycles", str(MAINTAINED_GRAPH["cycles"]), "python/outputs/component_graph_exposure_summary.csv", "independent_cycles")
+    add("Text: component-anchor sign-loss threshold", f"{COMPONENT_ANCHOR_SIGN_THRESHOLD:.5f}", "python/outputs/component_graph_exposure_summary.csv", "component_anchor_sign_threshold", "Bounded component-anchor radius at which fixed-anchor sign certification is lost.")
     add("Text/Table 6: bridge sign threshold", f"{BRIDGE_SIGN_THRESHOLD:.5f}", "python/outputs/unit_sensitivity_protocol_summary.csv", "bounded_bridge_threshold", "Target-average bridge corridor before fixed-anchor sign loss.")
     add("Text: margin-sufficiency Q dispersion", "0.00000", "python/outputs/margin_sufficiency_audit_summary.csv", "max_abs_delta_log_q", source_script="python/run_margin_sufficiency_audit.py")
     add("Text: margin-sufficiency row mismatch", "0.0000", "python/outputs/margin_sufficiency_audit_summary.csv", "transition_row_mismatch_share", source_script="python/run_margin_sufficiency_audit.py")

@@ -50,6 +50,7 @@ Text: maintained graph vertices,72171,python/run_final_diagnostics.py,python/out
 Text: maintained graph edges,249501,python/run_final_diagnostics.py,python/outputs/component_graph_exposure_summary.csv,edge_count,
 Text: maintained graph components,3737,python/run_final_diagnostics.py,python/outputs/component_graph_exposure_summary.csv,component_count,
 Text: maintained graph independent cycles,181067,python/run_final_diagnostics.py,python/outputs/component_graph_exposure_summary.csv,independent_cycles,
+Text: component-anchor sign-loss threshold,0.00333,python/run_final_diagnostics.py,python/outputs/component_graph_exposure_summary.csv,component_anchor_sign_threshold,Bounded component-anchor radius at which fixed-anchor sign certification is lost.
 Text/Table 6: bridge sign threshold,0.00298,python/run_final_diagnostics.py,python/outputs/unit_sensitivity_protocol_summary.csv,bounded_bridge_threshold,Target-average bridge corridor before fixed-anchor sign loss.
 Text: margin-sufficiency Q dispersion,0.00000,python/run_margin_sufficiency_audit.py,python/outputs/margin_sufficiency_audit_summary.csv,max_abs_delta_log_q,
 Text: margin-sufficiency row mismatch,0.0000,python/run_margin_sufficiency_audit.py,python/outputs/margin_sufficiency_audit_summary.csv,transition_row_mismatch_share,
