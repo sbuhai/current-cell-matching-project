@@ -25,6 +25,7 @@ def read_one(path: Path) -> dict[str, str]:
 
 
 def main() -> int:
+    subprocess.run([PYTHON, str(ROOT / "run_margin_sufficiency_audit.py")], check=True)
     subprocess.run([PYTHON, str(ROOT / "run_final_diagnostics.py")], check=True)
     graph = read_one(ROOT / "outputs" / "component_graph_exposure_summary.csv")
     for key, expected in EXPECTED.items():
@@ -40,6 +41,11 @@ def main() -> int:
     table3 = (ROOT / "outputs" / "main_certification_frontier_table.tex").read_text(encoding="utf-8")
     if "0.91480" not in table3:
         raise SystemExit("Table 3 free-anchor upper bound missing")
+    margin = read_one(ROOT / "outputs" / "margin_sufficiency_audit_summary.csv")
+    if margin.get("transition_row_mismatch_share") != "0.0":
+        raise SystemExit("margin-sufficiency transition-row audit mismatch")
+    if float(margin.get("max_abs_delta_log_q", "nan")) != 0.0:
+        raise SystemExit("represented-leg Q dispersion audit mismatch")
     for label in ["Table 3", "Table 4", "Table 5", "Table 6", "Table 7"]:
         print(f"{label} OK")
     return 0

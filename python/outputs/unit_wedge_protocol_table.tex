@@ -10,6 +10,7 @@
 Specification & $\theta$ & Graph rule & Target support share & Components & Point & Interval or bound & Certification \\
 \midrule
 Current-goods unit & 0.00 & tolerance graph & 0.7472 & 3737 & -0.00481 & [-0.00819,\ -0.00298] & negative \\
+Bounded bridge, $\bar b=0.001$ & none & fixed graph corridor & 0.7472 & 3737 & -0.00481 & [-0.00919,\ -0.00198] & negative \\
 Unit path, $\theta=0.25$ & 0.25 & rebuilt tolerance graph & 0.7573 & 62 & -0.00457 & [-0.01611,\ -0.00281] & negative \\
 Unit path, $\theta=0.50$ & 0.50 & rebuilt tolerance graph & 0.7888 & 62 & -0.02694 & [-0.08342,\ -0.02136] & negative \\
 Unit path, $\theta=0.75$ & 0.75 & rebuilt tolerance graph & 0.8166 & 47 & -0.03167 & [-0.28857,\ 0.30268] & no \\
@@ -20,6 +21,6 @@ Illustrative lower-tail completion & none & completion bound & 1.0000 & not appl
 \end{tabular}%
 }
 \begin{minipage}{0.99\textwidth}
-\footnotesize Notes. Target support share is over focal target mass; candidate share in \Cref{tab:grid-candidate-sensitivity} is over tolerance candidates. Unit-path rows rebuild the graph. The raw Euler proxy uses a diagnostic five-nearest graph and unprojected finite-grid Euler residuals. It is a numerical stress test, not a competing welfare object.
+\footnotesize Notes. Target support share is over focal target mass; candidate share in \Cref{tab:grid-candidate-sensitivity} is over tolerance candidates. The bridge row reports the induced target-average corridor $|\Delta\log\BridgeCorr|\le0.001$ on the fixed graph; the fixed-anchor sign is lost only when this corridor reaches $0.00298$. Unit-path rows rebuild the graph. The raw Euler proxy uses a diagnostic five-nearest graph and unprojected finite-grid Euler residuals. It is a numerical stress test, not a competing welfare object.
 \end{minipage}
 \end{table}

@@ -1,5 +1,5 @@
 Replication log manifest for Support, Units, and Current-Cell Matching in Social Discounting
-Updated by the full Python replication runner, 2026-05-29T19:57:44Z.
+Updated by the full Python replication runner, 2026-05-31T00:37:11Z.
 
 Execution environment:
   - python_executable: C:\tmp\sdrecheck_venv\Scripts\python.exe
@@ -25,6 +25,7 @@ Run logs and run records:
   - run_robustness_full_rebuild.log: successful full rebuild of the robustness outputs.
   - run_robustness.log: successful validation of the rebuilt robustness outputs.
   - run_nearby_policy_audit.log: successful support/rematching table regeneration.
+  - run_margin_sufficiency_audit.log: successful current-map margin-sufficiency dispersion audit regeneration.
   - run_final_diagnostics.log: successful regeneration of manuscript Tables 3-7 and MAIN_TABLE_SOURCE_MAP.csv.
   - reproduce_main_tables.log: successful synchronization check for Tables 3-7.
 
@@ -45,5 +46,6 @@ Command sequence:
   FULL_REBUILD=1 python run_robustness.py
   python run_robustness.py
   python run_nearby_policy_audit.py
+  python run_margin_sufficiency_audit.py
   python run_final_diagnostics.py
   python reproduce_main_tables.py

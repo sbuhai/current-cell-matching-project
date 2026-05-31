@@ -1,5 +1,6 @@
 specification,theta,graph_rule,target_support_share,component_count,point_log_ratio,lower_log_ratio,upper_log_ratio,sign_certified
 Current-goods unit,0.00,tolerance graph,0.7472,3737,-0.00481,-0.00819,-0.00298,negative
+"Bounded bridge, \bar b=0.001",none,fixed graph corridor,0.7472,3737,-0.00481,-0.00919,-0.00198,negative
 "Unit path, theta=0.25",0.25,rebuilt tolerance graph,0.7573,62,-0.00457,-0.01611,-0.00281,negative
 "Unit path, theta=0.50",0.50,rebuilt tolerance graph,0.7888,62,-0.02694,-0.08342,-0.02136,negative
 "Unit path, theta=0.75",0.75,rebuilt tolerance graph,0.8166,47,-0.03167,-0.28857,0.30268,no

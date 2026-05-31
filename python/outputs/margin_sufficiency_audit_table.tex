@@ -1,0 +1,21 @@
+\begin{table}[H]
+\centering
+\caption{Current-map margin-sufficiency audit for retained tolerance edges}
+\label{tab:margin-sufficiency-audit}
+\footnotesize
+\begin{tabular}{lc}
+\toprule
+Diagnostic & Value \\
+\midrule
+Retained $\varepsilon=0.005$, $K=58$ edges & 256037 \\
+Max $|\Delta\log\mathcal Q|$ & 0.00000 \\
+Transition-row mismatch share & 0.0000 \\
+Mean $|\Delta\log\Lambda|$ & 0.00092 \\
+95th percentile $|\Delta\log\Lambda|$ & 0.00649 \\
+Boundary-regime mismatch share & 0.0166 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.92\textwidth}
+\footnotesize Notes. Diagnostics are weighted by younger-cell stationary mass over retained candidate edges when a loading comparison is defined. Global asset monotonicity is audited separately; the maintained graph does not invert the asset index where monotonicity is not uniform, but works directly with the verified code and log-private-unit tolerance.
+\end{minipage}
+\end{table}

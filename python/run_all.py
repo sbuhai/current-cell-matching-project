@@ -33,6 +33,7 @@ COMMANDS = [
     ("run_robustness_full_rebuild.log", "FULL_REBUILD=1 python run_robustness.py", ["run_robustness.py"], {"FULL_REBUILD": "1"}),
     ("run_robustness.log", "python run_robustness.py", ["run_robustness.py"], {}),
     ("run_nearby_policy_audit.log", "python run_nearby_policy_audit.py", ["run_nearby_policy_audit.py"], {}),
+    ("run_margin_sufficiency_audit.log", "python run_margin_sufficiency_audit.py", ["run_margin_sufficiency_audit.py"], {}),
     ("run_final_diagnostics.log", "python run_final_diagnostics.py", ["run_final_diagnostics.py"], {}),
     ("reproduce_main_tables.log", "python reproduce_main_tables.py", ["reproduce_main_tables.py"], {}),
 ]
@@ -163,6 +164,7 @@ Run logs and run records:
   - run_robustness_full_rebuild.log: successful full rebuild of the robustness outputs.
   - run_robustness.log: successful validation of the rebuilt robustness outputs.
   - run_nearby_policy_audit.log: successful support/rematching table regeneration.
+  - run_margin_sufficiency_audit.log: successful current-map margin-sufficiency dispersion audit regeneration.
   - run_final_diagnostics.log: successful regeneration of manuscript Tables 3-7 and MAIN_TABLE_SOURCE_MAP.csv.
   - reproduce_main_tables.log: successful synchronization check for Tables 3-7.
 

@@ -1,5 +1,5 @@
-===== RUNNING python run_nearby_policy_audit.py at 2026-05-29T19:57:44Z =====
+===== RUNNING python run_nearby_policy_audit.py at 2026-05-31T00:36:40Z =====
 Nearby policy audit tables written successfully.
 Output directory: python\outputs
-real 0.18
-===== EXIT python run_nearby_policy_audit.py status 0 at 2026-05-29T19:57:44Z =====
+real 0.21
+===== EXIT python run_nearby_policy_audit.py status 0 at 2026-05-31T00:36:40Z =====

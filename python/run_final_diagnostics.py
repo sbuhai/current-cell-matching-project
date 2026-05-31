@@ -45,6 +45,9 @@ MAINTAINED_GRAPH = {
     "min_relaxation": 0.0,
 }
 
+BRIDGE_CORRECTION_RADIUS = 0.001
+BRIDGE_SIGN_THRESHOLD = abs(float(MAINTAINED_GRAPH["fixed_upper"]))
+
 MAIN_CERTIFICATION_ROWS = [
     {
         "system": "Age-only",
@@ -141,6 +144,7 @@ COMPONENT_EXPOSURE_ROWS = [
 
 UNIT_PROTOCOL_ROWS = [
     {"specification": "Current-goods unit", "theta": "0.00", "graph_rule": "tolerance graph", "support_share": 0.7472, "components": 3737, "point": -0.00481, "lower": -0.00819, "upper": -0.00298, "certification": "negative"},
+    {"specification": r"Bounded bridge, $\bar b=0.001$", "theta": "none", "graph_rule": "fixed graph corridor", "support_share": 0.7472, "components": 3737, "point": -0.00481, "lower": MAINTAINED_GRAPH["fixed_lower"] - BRIDGE_CORRECTION_RADIUS, "upper": MAINTAINED_GRAPH["fixed_upper"] + BRIDGE_CORRECTION_RADIUS, "certification": "negative"},
     {"specification": r"Unit path, $\theta=0.25$", "theta": "0.25", "graph_rule": "rebuilt tolerance graph", "support_share": 0.7573, "components": 62, "point": -0.00457, "lower": -0.01611, "upper": -0.00281, "certification": "negative"},
     {"specification": r"Unit path, $\theta=0.50$", "theta": "0.50", "graph_rule": "rebuilt tolerance graph", "support_share": 0.7888, "components": 62, "point": -0.02694, "lower": -0.08342, "upper": -0.02136, "certification": "negative"},
     {"specification": r"Unit path, $\theta=0.75$", "theta": "0.75", "graph_rule": "rebuilt tolerance graph", "support_share": 0.8166, "components": 47, "point": -0.03167, "lower": -0.28857, "upper": 0.30268, "certification": "no"},
@@ -320,7 +324,7 @@ def _write_component_tables() -> None:
             r"\bottomrule",
             r"\end{tabular}",
             r"\begin{minipage}{0.88\textwidth}",
-            r"\footnotesize Notes. Entries are relative to original target mass. Shared components receive positive mass from both targets. The Herfindahl index uses each target's component mass shares on the maintained tolerance graph.",
+            r"\footnotesize Notes. The first row is normalized by each target's graph-supported mass; the Herfindahl index uses each target's retained component shares. The largest-common-component row is normalized by original target mass. Shared components receive positive mass from both targets.",
             r"\end{minipage}",
             r"\end{table}",
             "",
@@ -395,7 +399,7 @@ def _write_unit_protocol_table() -> None:
             r"\end{tabular}%",
             r"}",
             r"\begin{minipage}{0.99\textwidth}",
-            r"\footnotesize Notes. Target support share is over focal target mass; candidate share in \Cref{tab:grid-candidate-sensitivity} is over tolerance candidates. Unit-path rows rebuild the graph. The raw Euler proxy uses a diagnostic five-nearest graph and unprojected finite-grid Euler residuals. It is a numerical stress test, not a competing welfare object.",
+            r"\footnotesize Notes. Target support share is over focal target mass; candidate share in \Cref{tab:grid-candidate-sensitivity} is over tolerance candidates. The bridge row reports the induced target-average corridor $|\Delta\log\BridgeCorr|\le0.001$ on the fixed graph; the fixed-anchor sign is lost only when this corridor reaches $0.00298$. Unit-path rows rebuild the graph. The raw Euler proxy uses a diagnostic five-nearest graph and unprojected finite-grid Euler residuals. It is a numerical stress test, not a competing welfare object.",
             r"\end{minipage}",
             r"\end{table}",
             "",
@@ -445,7 +449,7 @@ def _write_grid_candidate_table() -> None:
             r"\end{tabular}%",
             r"}",
             r"\begin{minipage}{0.99\textwidth}",
-            r"\footnotesize Notes. Panel B makes the tolerance band the maintained object. Candidate support share is computed over the tolerance-candidate graph, not over the focal target domain. The search cap $K$ is the smallest cap that exhausts the retained tolerance set in the five-state hump calibration. Increasing the cap beyond the listed value adds no retained pair inside the stated tolerance. The maintained numerical row uses $\varepsilon=0.005$.",
+            r"\footnotesize Notes. Panel B makes the tolerance band the maintained object. Candidate support share is computed over the tolerance-candidate graph, not over the focal target domain. $\widehat{\Spread}$ is the finite within-fiber log-spread of recovered multipliers and $\widehat{\DemDist}$ is the corresponding age-transport distance. The search cap $K$ is the smallest cap that exhausts retained pairs; the maintained row uses $\varepsilon=0.005$, has a nonempty feasible set, zero parallel/cycle residuals, zero max band violation, and zero minimal relaxation.",
             r"\end{minipage}",
             r"\end{table}",
             "",
@@ -505,11 +509,11 @@ def _write_nearby_table() -> None:
 def _write_source_map() -> None:
     rows: list[dict[str, str]] = []
 
-    def add(obj: str, value: str, source_file: str, variable: str, notes: str = "") -> None:
+    def add(obj: str, value: str, source_file: str, variable: str, notes: str = "", source_script: str = "python/run_final_diagnostics.py") -> None:
         rows.append({
             "manuscript_object": obj,
             "manuscript_value": value,
-            "source_script": "python/run_final_diagnostics.py",
+            "source_script": source_script,
             "source_file": source_file,
             "source_variable": variable,
             "notes": notes,
@@ -521,8 +525,9 @@ def _write_source_map() -> None:
         add(f"Table 4 rho {row['rho']}: fixed interval", _fmt_interval(row["fixed_lower"], row["fixed_upper"]), "python/outputs/discount_schedule_frontier_summary.csv", "fixed_lower, fixed_upper", "Free-anchor status is Unidentified for every row.")
         add(f"Table 4 rho {row['rho']}: largest-component interval", _fmt_interval(row["largest_lower"], row["largest_upper"]), "python/outputs/discount_schedule_frontier_summary.csv", "largest_lower, largest_upper")
     for row in COMPONENT_EXPOSURE_ROWS:
-        add(f"Table 5: {row['statistic']} Target A", f"{row['target_a']:.4f}", "python/outputs/component_exposure_table_summary.csv", row["source_variable"], "Denominator is original target mass.")
-        add(f"Table 5: {row['statistic']} Target B", f"{row['target_b']:.4f}", "python/outputs/component_exposure_table_summary.csv", row["source_variable"], "Denominator is original target mass.")
+        note = "Denominator is original target mass." if row["statistic"].startswith("Mass in largest") else "Denominator is graph-supported target mass."
+        add(f"Table 5: {row['statistic']} Target A", f"{row['target_a']:.4f}", "python/outputs/component_exposure_table_summary.csv", row["source_variable"], note)
+        add(f"Table 5: {row['statistic']} Target B", f"{row['target_b']:.4f}", "python/outputs/component_exposure_table_summary.csv", row["source_variable"], note)
     for row in UNIT_PROTOCOL_ROWS:
         add(f"Table 6: {row['specification']} components", "not applicable" if not math.isfinite(float(row["components"])) else str(int(row["components"])), "python/outputs/unit_sensitivity_protocol_summary.csv", "component_count")
         add(f"Table 6: {row['specification']} interval", _fmt_interval(float(row["lower"]), float(row["upper"])), "python/outputs/unit_sensitivity_protocol_summary.csv", "lower_log_ratio, upper_log_ratio")
@@ -533,6 +538,10 @@ def _write_source_map() -> None:
     add("Text: maintained graph edges", str(MAINTAINED_GRAPH["edges"]), "python/outputs/component_graph_exposure_summary.csv", "edge_count")
     add("Text: maintained graph components", str(MAINTAINED_GRAPH["components"]), "python/outputs/component_graph_exposure_summary.csv", "component_count")
     add("Text: maintained graph independent cycles", str(MAINTAINED_GRAPH["cycles"]), "python/outputs/component_graph_exposure_summary.csv", "independent_cycles")
+    add("Text/Table 6: bridge sign threshold", f"{BRIDGE_SIGN_THRESHOLD:.5f}", "python/outputs/unit_sensitivity_protocol_summary.csv", "bounded_bridge_threshold", "Target-average bridge corridor before fixed-anchor sign loss.")
+    add("Text: margin-sufficiency Q dispersion", "0.00000", "python/outputs/margin_sufficiency_audit_summary.csv", "max_abs_delta_log_q", source_script="python/run_margin_sufficiency_audit.py")
+    add("Text: margin-sufficiency row mismatch", "0.0000", "python/outputs/margin_sufficiency_audit_summary.csv", "transition_row_mismatch_share", source_script="python/run_margin_sufficiency_audit.py")
+    add("Text: margin-sufficiency Lambda p95 dispersion", "0.00649", "python/outputs/margin_sufficiency_audit_summary.csv", "p95_abs_delta_log_lambda", source_script="python/run_margin_sufficiency_audit.py")
     add("Manuscript data statement: replication URL", WEBSITE_URL, "main.tex", "Data and code availability")
 
     fieldnames = ["manuscript_object", "manuscript_value", "source_script", "source_file", "source_variable", "notes"]
@@ -541,7 +550,7 @@ def _write_source_map() -> None:
 
     notes = f"""# Source notes for the main manuscript tables
 
-The main tables in Section 8 are regenerated by `python/run_final_diagnostics.py`.
+The main tables in Section 8 are regenerated by `python/run_final_diagnostics.py`. The current-map dispersion numbers are generated by `python/run_margin_sufficiency_audit.py` and included in the source map.
 
 Maintained graph object: exhaustive current-cell tolerance graph with epsilon 0.005. It has {MAINTAINED_GRAPH['vertices']:,} vertices, {MAINTAINED_GRAPH['edges']:,} edges, {MAINTAINED_GRAPH['components']:,} components, and {MAINTAINED_GRAPH['cycles']:,} independent cycles. Diagnostic five-nearest objects are used only in rows explicitly labeled as diagnostic.
 

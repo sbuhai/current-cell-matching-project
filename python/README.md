@@ -7,6 +7,7 @@ The code computes, in a transparent finite-life benchmark, the lower-envelope ob
 - the private continuation-value derivative `upsilon`,
 - the market benchmark `Q`,
 - the implementability wedge `Lambda`,
+- current-map margin-sufficiency dispersion diagnostics,
 - the minimal younger-versus-older normalized-weight ratio implied by a candidate social discount factor,
 - the fiberwise log-spread `G`, and
 - the conditional transport statistic `D`.
@@ -23,6 +24,7 @@ The code computes, in a transparent finite-life benchmark, the lower-envelope ob
 - `run_all.py` is the master replication driver. It rebuilds the generated environment records, logs, tables, figures, source maps, and main synchronization checks from a clean generated state.
 - `run_baseline.py` executes the full baseline pipeline.
 - `run_nearby_policy_audit.py` repackages the frozen nearby-target diagnostics into the compact main-text audit tables used in the current revision.
+- `run_margin_sufficiency_audit.py` audits within-match dispersion of the represented leg, KKT loading, transition-row code, and boundary regime for the maintained tolerance graph.
 - `run_normalization_robustness.py` rebuilds the alternative-unit exact comparison graph under the age and earnings reference-slope metric `v_tilde = v / vbar`, reporting support, edge/component counts, graph intervals, and target diagnostics.
 - `data/nchs_2021_total_survival.csv` contains the total-population one-year survival schedule used in the paper.
 - `outputs/` stores generated artifacts.
@@ -96,7 +98,7 @@ The code is intentionally compact and uses only `numpy` and `matplotlib`. The ai
 
 ## Replication package contents
 
-This directory contains the solution scripts, public inputs, generated tables, generated numbers, graph diagnostics, source notes, and run logs/run records used for the manuscript tables and diagnostics. The manuscript reads the compact tables from `outputs/nearby_policy_audit_table.tex`, `outputs/component_exposure_compact_table.tex`, and `outputs/unit_wedge_protocol_table.tex`; the underlying CSV summaries are stored in the same directory. The canonical full replication command is `python run_all.py`. The compact main-text tables can also be regenerated from existing generated CSV files by running `python run_nearby_policy_audit.py` and `python run_final_diagnostics.py`; `python reproduce_main_tables.py` regenerates and checks Tables 3-7; the alternative-unit graph diagnostics can be regenerated with `python run_normalization_robustness.py`.
+This directory contains the solution scripts, public inputs, generated tables, generated numbers, graph diagnostics, source notes, and run logs/run records used for the manuscript tables and diagnostics. The manuscript reads the compact tables from `outputs/nearby_policy_audit_table.tex`, `outputs/component_exposure_compact_table.tex`, and `outputs/unit_wedge_protocol_table.tex`; the underlying CSV summaries are stored in the same directory. The canonical full replication command is `python run_all.py`. The compact main-text tables can also be regenerated from existing generated CSV files by running `python run_nearby_policy_audit.py`, `python run_margin_sufficiency_audit.py`, and `python run_final_diagnostics.py`; `python reproduce_main_tables.py` regenerates and checks Tables 3-7 plus the current-map dispersion audit; the alternative-unit graph diagnostics can be regenerated with `python run_normalization_robustness.py`.
 
 ## Data availability
 
