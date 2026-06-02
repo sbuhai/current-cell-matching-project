@@ -1,6 +1,6 @@
 # Python companion for the quantitative block
 
-This directory contains the reproducible quantitative companion for **Support, Units, and Current-Cell Matching in Social Discounting**.
+This directory contains the reproducible quantitative companion for **Who Counts as Young? Matching Rules for Social Discounting**.
 
 The code computes, in a transparent finite-life benchmark, the lower-envelope objects that appear in the quantitative section and the paper appendix under the paper's chosen matching rule, risk-free margin, and terminal normalization:
 

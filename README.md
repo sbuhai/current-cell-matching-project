@@ -1,6 +1,6 @@
-# Support, Units, and Current-Cell Matching in Social Discounting
+# Who Counts as Young? Matching Rules for Social Discounting
 
-This repository contains the paper PDF and Python replication package for **Support, Units, and Current-Cell Matching in Social Discounting**.
+This repository contains the paper PDF and Python replication package for **Who Counts as Young? Matching Rules for Social Discounting**.
 
 ## Contents
 
