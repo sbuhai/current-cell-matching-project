@@ -4,7 +4,7 @@ This repository contains the paper PDF and Python replication package for **Supp
 
 ## Contents
 
-- `paper/CurrentCellMatching.pdf`: current paper PDF.
+- `paper/current_cell_matching.pdf`: current paper PDF.
 - `python/`: Python replication package, public input data, generated outputs, environment records, and run logs.
 
 ## Reproducing the Python outputs
