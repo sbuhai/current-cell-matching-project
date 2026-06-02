@@ -1,4 +1,4 @@
-Replication archive for “Support, Units, and Current-Cell Matching in Social Discounting.”
+Replication archive for “Who Counts as Young? Matching Rules for Social Discounting.”
 
 Open README.md for details. From the package root, the complete Python replication command is:
 cd python

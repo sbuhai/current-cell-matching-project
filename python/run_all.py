@@ -137,7 +137,7 @@ def run_logged(log_name: str, description: str, args: list[str], env_updates: di
 
 def write_manifest() -> None:
     command_lines = "\n".join(f"  {description}" for _, description, _, _ in COMMANDS)
-    manifest = f"""Replication log manifest for Support, Units, and Current-Cell Matching in Social Discounting
+    manifest = f"""Replication log manifest for Who Counts as Young? Matching Rules for Social Discounting
 Updated by the full Python replication runner, {utc_stamp()}.
 
 Execution environment:

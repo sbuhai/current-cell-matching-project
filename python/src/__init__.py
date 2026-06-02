@@ -1,4 +1,4 @@
-"""Quantitative companion code for *Support, Units, and Current-Cell Matching in Social Discounting*.
+"""Quantitative companion code for *Who Counts as Young? Matching Rules for Social Discounting*.
 
 The package is intentionally compact. It provides a transparent
 pipeline for a finite-life, one-asset, incomplete-markets benchmark that maps

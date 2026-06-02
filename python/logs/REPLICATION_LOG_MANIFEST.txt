@@ -1,4 +1,4 @@
-Replication log manifest for Support, Units, and Current-Cell Matching in Social Discounting
+Replication log manifest for Who Counts as Young? Matching Rules for Social Discounting
 Updated by the full Python replication runner, 2026-05-31T23:43:35Z.
 
 Execution environment:

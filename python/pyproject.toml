@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "local-social-discounting-quant"
 version = "0.3.0"
-description = "Quantitative companion code for Support, Units, and Current-Cell Matching in Social Discounting"
+description = "Quantitative companion code for Who Counts as Young? Matching Rules for Social Discounting"
 requires-python = ">=3.10"
 dependencies = [
   "numpy>=1.26",
