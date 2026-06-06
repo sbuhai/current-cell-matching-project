@@ -1,6 +1,6 @@
-===== RUNNING FULL_REBUILD=1 python run_wedge_audit.py at 2026-05-31T23:42:12Z =====
+===== RUNNING FULL_REBUILD=1 python run_wedge_audit.py at 2026-06-06T21:28:05Z =====
 Wedge audit written successfully.
 CSV: python\outputs\wedge_audit_summary.csv
 TeX: python\outputs\wedge_audit_table.tex
-real 27.84
-===== EXIT FULL_REBUILD=1 python run_wedge_audit.py status 0 at 2026-05-31T23:42:40Z =====
+real 28.43
+===== EXIT FULL_REBUILD=1 python run_wedge_audit.py status 0 at 2026-06-06T21:28:34Z =====

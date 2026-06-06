@@ -1,4 +1,4 @@
-===== RUNNING python run_all.py at 2026-05-31T23:36:34Z =====
+===== RUNNING python run_all.py at 2026-06-06T21:21:03Z =====
 python_executable: C:\tmp\sdrecheck_venv\Scripts\python.exe
 working_directory: python
 python -m compileall -q .: status 0
@@ -17,4 +17,4 @@ python run_nearby_policy_audit.py: status 0
 python run_margin_sufficiency_audit.py: status 0
 python run_final_diagnostics.py: status 0
 python reproduce_main_tables.py: status 0
-===== EXIT python run_all.py status 0 at 2026-05-31T23:43:35Z =====
+===== EXIT python run_all.py status 0 at 2026-06-06T21:29:41Z =====

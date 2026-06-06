@@ -1,4 +1,4 @@
-===== RUNNING python run_margin_sufficiency_audit.py at 2026-05-31T23:43:11Z =====
+===== RUNNING python run_margin_sufficiency_audit.py at 2026-06-06T21:29:14Z =====
 Margin-sufficiency audit written successfully.
-real 12.29
-===== EXIT python run_margin_sufficiency_audit.py status 0 at 2026-05-31T23:43:23Z =====
+real 13.38
+===== EXIT python run_margin_sufficiency_audit.py status 0 at 2026-06-06T21:29:28Z =====
