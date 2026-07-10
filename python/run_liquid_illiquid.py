@@ -1,4 +1,4 @@
-"""Run the stylized liquid/illiquid extension for the appendix revision.
+"""Run the stylized liquid/illiquid extension for the appendix.
 
 This script produces a compact richer-state quantitative block built around a
 convex liquid/illiquid life-cycle problem. The output is intentionally compact:

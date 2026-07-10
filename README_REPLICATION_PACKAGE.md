@@ -25,6 +25,6 @@ PYTHONPATH=python python python/reproduce_main_tables.py
 - `python/outputs/`: generated tables, CSV summaries, and diagnostic files.
 - `python/logs/`: run records for the generated results.
 - `python/run_all.py`: complete replication driver.
-- `MAIN_TABLE_SOURCE_MAP_EER.csv`: map from manuscript tables and text values to scripts and output variables.
+- `MAIN_TABLE_SOURCE_MAP_COMPACT.csv`: compact map from main-text and appendix table values to scripts and output variables.
 
 No restricted-access microdata are used. The public project repository is https://github.com/sbuhai/current-cell-matching-project.

@@ -4,7 +4,7 @@ The goal of this module is not to deliver a fully calibrated HANK workhorse. It
 provides a compact convex two-asset environment in which the theorem-guided
 current map must account for current illiquid structure as well as current
 earnings. The block is intentionally lightweight so it can be solved quickly in
-this revision environment while remaining economically interpretable.
+this replication environment while remaining economically interpretable.
 """
 
 from __future__ import annotations

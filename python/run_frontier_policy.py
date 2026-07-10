@@ -1,7 +1,7 @@
 """Run the support-sufficiency, graph-envelope, and policy-ranking pipeline.
 
-This script computes the new quantitative objects introduced in the final
-revision: the support-versus-sufficiency frontier, the graph-robust maintained
+This script computes the quantitative objects used in the manuscript: the
+support-versus-sufficiency frontier, the graph-robust maintained
 envelope over admissible one-step correspondences, and a compact local
 budget-neutral PVEU-margin comparison.
 """

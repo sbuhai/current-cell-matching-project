@@ -23,7 +23,7 @@ The code computes, in a transparent finite-life benchmark, the lower-envelope ob
 - `src/reporting.py` writes CSV summaries and the figures and tables used in the manuscript.
 - `run_all.py` is the master replication driver. It rebuilds the generated environment records, logs, tables, figures, source maps, and main synchronization checks from a clean generated state.
 - `run_baseline.py` executes the full baseline pipeline.
-- `run_nearby_policy_audit.py` repackages the frozen nearby-target diagnostics into the compact main-text audit tables used in the current revision.
+- `run_nearby_policy_audit.py` repackages the frozen nearby-target diagnostics into the compact main-text audit tables used in the paper.
 - `run_margin_sufficiency_audit.py` audits within-match dispersion of the represented leg, KKT loading, transition-row code, and boundary regime for the maintained tolerance graph.
 - `run_normalization_robustness.py` rebuilds the alternative-unit exact comparison graph under the age and earnings reference-slope metric `v_tilde = v / vbar`, reporting support, edge/component counts, graph intervals, and target diagnostics.
 - `data/nchs_2021_total_survival.csv` contains the total-population one-year survival schedule used in the paper.
