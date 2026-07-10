@@ -65,9 +65,6 @@ def clean_generated_files() -> None:
         path.mkdir(parents=True, exist_ok=True)
     for pycache in ROOT.rglob("__pycache__"):
         shutil.rmtree(pycache)
-    source_map = PACKAGE_ROOT / "MAIN_TABLE_SOURCE_MAP.csv"
-    if source_map.exists():
-        source_map.unlink()
 
 
 def ensure_generated_dirs() -> None:
@@ -148,7 +145,7 @@ Execution environment:
 Generated directories and files:
   - outputs/: generated tables, figures, CSV summaries, TeX number files, and source maps.
   - logs/: plain-text command logs for each replication step.
-  - MAIN_TABLE_SOURCE_MAP.csv: duplicate of outputs/MAIN_TABLE_SOURCE_MAP.csv at the replication package root.
+  - outputs/MAIN_TABLE_SOURCE_MAP.csv: full generated source map for manuscript-facing tables and text values.
 
 Run logs and run records:
   - python_compileall.log: successful syntax/bytecode compile check for all Python modules.
@@ -165,7 +162,7 @@ Run logs and run records:
   - run_robustness.log: successful validation of the rebuilt robustness outputs.
   - run_nearby_policy_audit.log: successful support/rematching table regeneration.
   - run_margin_sufficiency_audit.log: successful current-map margin-sufficiency dispersion audit regeneration.
-  - run_final_diagnostics.log: successful regeneration of manuscript Tables 3-7 and MAIN_TABLE_SOURCE_MAP.csv.
+  - run_final_diagnostics.log: successful regeneration of manuscript Tables 3-7 and outputs/MAIN_TABLE_SOURCE_MAP.csv.
   - reproduce_main_tables.log: successful synchronization check for Tables 3-7.
 
 Full replication command:
