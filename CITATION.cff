@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this replication package, please cite the paper and this repository."
-title: "Who Counts as Young? Matching Rules for Social Discounting: replication package"
+title: "When Does Social Discounting Favor the Young? Welfare Comparisons in Heterogeneous Economies: replication package"
 authors:
   - family-names: "Buhai"
     given-names: "Ioan-Sebastian"
-date-released: "2026-05-29"
+date-released: "2026-07-11"
 url: "https://github.com/sbuhai/current-cell-matching-project"

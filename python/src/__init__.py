@@ -1,4 +1,4 @@
-"""Quantitative companion code for *Who Counts as Young? Matching Rules for Social Discounting*.
+"""Quantitative companion code for *When Does Social Discounting Favor the Young? Welfare Comparisons in Heterogeneous Economies*.
 
 The package is intentionally compact. It provides a transparent
 pipeline for a finite-life, one-asset, incomplete-markets benchmark that maps

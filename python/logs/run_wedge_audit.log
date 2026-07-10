@@ -1,7 +1,7 @@
-===== RUNNING python run_wedge_audit.py at 2026-06-06T21:28:34Z =====
+===== RUNNING python run_wedge_audit.py at 2026-07-10T22:45:18Z =====
 Frozen outputs validated for run_wedge_audit.py. Set FULL_REBUILD=1 to recompute the finite-grid solve.
 validated: wedge_audit_summary.csv
 validated: wedge_audit_table.tex
 validated: generated_numbers_baseline.tex
-real 0.45
-===== EXIT python run_wedge_audit.py status 0 at 2026-06-06T21:28:34Z =====
+real 1.14
+===== EXIT python run_wedge_audit.py status 0 at 2026-07-10T22:45:19Z =====

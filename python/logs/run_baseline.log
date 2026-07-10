@@ -1,6 +1,6 @@
-===== RUNNING python run_baseline.py at 2026-06-06T21:21:09Z =====
+===== RUNNING python run_baseline.py at 2026-07-10T22:35:15Z =====
 Baseline quantitative pipeline executed successfully.
 Outputs written to: python\outputs
 Direct matching diagnostics: mean=0.000654, median=0.000005, p95=0.002064, p99=0.010697, max=0.026627, overall_overlap=1.000000, min_age_overlap=1.000000
-real 57.38
-===== EXIT python run_baseline.py status 0 at 2026-06-06T21:22:06Z =====
+real 54.01
+===== EXIT python run_baseline.py status 0 at 2026-07-10T22:36:09Z =====

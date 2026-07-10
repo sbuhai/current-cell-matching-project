@@ -1,4 +1,4 @@
-Replication archive for “Who Counts as Young? Matching Rules for Social Discounting.”
+Replication archive for “When Does Social Discounting Favor the Young? Welfare Comparisons in Heterogeneous Economies.”
 
 Open README.md for details. From the package root, the complete Python replication command is:
 cd python

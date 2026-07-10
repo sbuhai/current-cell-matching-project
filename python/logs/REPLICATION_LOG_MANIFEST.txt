@@ -1,5 +1,5 @@
-Replication log manifest for Who Counts as Young? Matching Rules for Social Discounting
-Updated by the full Python replication runner, 2026-06-06T21:29:41Z.
+Replication log manifest for When Does Social Discounting Favor the Young? Welfare Comparisons in Heterogeneous Economies
+Updated by the full Python replication runner, 2026-07-10T22:47:12Z.
 
 Execution environment:
   - python_executable: C:\tmp\sdrecheck_venv\Scripts\python.exe
